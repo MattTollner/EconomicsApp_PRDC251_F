@@ -19,7 +19,7 @@
     <div>
         <div class="center-page">
 
-            <label class="col-xs-11">Email</label>
+            <label class="col-xs-11">User Type</label>
             <div class="col-xs-11">
                 <select id="SelectType" runat="server">
                             <option>Student</option>

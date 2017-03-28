@@ -16,12 +16,12 @@
   <body style="background-color:#2B3A42">
 	<div class="container">
 	<ul class="list-inline">
-		<li><a href="Home.html">Home</a></li>
-		<li><a href="RevisionMaterial.html">Revision Material</a></li>
+		<li><a href="Home.aspx">Home</a></li>
+		<li><a href="RevisionMaterial.aspx">Revision Material</a></li>
 		<li><a href="#">Quiz</a></li>
 		<li><a href="#">Archive(doesn't like quiz archive on this page3)</a></li>
-		<li><a href="Glossary.html">Glossary</a></li>
-		<li><a href="NewsOutlet.html">News Outlets</a></li>
+		<li><a href="Glossary.aspx">Glossary</a></li>
+		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 		<li style="float:right"><a href="#">Account Details</a></li>
 	</ul>
 	<div class="page-header">

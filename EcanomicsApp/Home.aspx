@@ -14,6 +14,7 @@
 
   </head>
   <body style="background-color:#2B3A42">
+	  <form id="form1" runat="server">
 	<div class="container">
 	<ul class="list-inline">
 		<li><a href="Home.aspx">Home</a></li>
@@ -26,7 +27,7 @@
 					data-toggle="dropdown">Account<span class="caret"></span>
 					<ul class="dropdown-menu">
 					<li><a href="#">Edit Details</a></li>
-					<li><button id="btnLogOut">Logout</button></li>
+					<li><asp:Button ID="btnLogOut"  CssClass="btn bnt-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button>   </li>
 					</ul>
 	</ul>
 	
@@ -50,6 +51,10 @@
 	<a href="Glossary.aspx" class="btn btn-default btn-lg">Glossary</a><br />
 	
 	<a href="NewsOutlet.aspx" class="btn btn-default btn-lg">News Outlets</a><br />
+    
+    <asp:Label ID="successLbl" runat="server"  CssClass="btn bnt-default navbar-btn" Text="Log Out"></asp:Label>
+    
+      
 	
 	</center>
 	</div>
@@ -67,5 +72,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+      </form>
   </body>
 </html>

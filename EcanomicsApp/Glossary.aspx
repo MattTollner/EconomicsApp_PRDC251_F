@@ -21,12 +21,12 @@
   <body style="background-color:#2B3A42">
 	<div class="container">
 	<ul class="list-inline">
-	<li><a href="Home.html">Home</a></li>
-	<li><a href="RevisionMaterial.html">Revision Material</a></li>
+	<li><a href="Home.aspx">Home</a></li>
+	<li><a href="RevisionMaterial.aspx">Revision Material</a></li>
 	<li><a href="#">Quiz</a></li>
 	<li><a href="#">Quiz Archive</a></li>
-	<li><a href="Glossary.html">Glossary</a></li>
-	<li><a href="NewsOutlet.html">News Outlets</a></li>
+	<li><a href="Glossary.aspx">Glossary</a></li>
+	<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	<li style="float:right" class="dropdown"><a href="#" class="dropdown-toggle" 
 					data-toggle="dropdown">Account<span class="caret"></span>
 					<ul class="dropdown-menu">

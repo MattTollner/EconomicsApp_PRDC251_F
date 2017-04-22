@@ -7,9 +7,15 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
+using System.Security.Cryptography;
+using System.Text;
+ 
+
 
 public partial class SignUp : System.Web.UI.Page
 {
+    
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -19,6 +25,8 @@ public partial class SignUp : System.Web.UI.Page
     {
         String CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
 
+       
+
         using(SqlConnection con = new SqlConnection(CS))
         {
 
@@ -26,21 +34,45 @@ public partial class SignUp : System.Web.UI.Page
             {
                 if(tbPass.Text == tbCPass.Text)
                 {
-                    if(SelectType.Value == "Student")
+
+                    string hashedPass = HashingPassword.ComputeHash(tbPass.Text, null);
+
+
+
+                    if (SelectType.Value == "Student")
                     {
                         SqlCommand cmd = new SqlCommand("insert into Student values('"
 
                                     + tbUsername.Text + "','"
                                     + tbFirstName.Text + "','"
                                     + tbLastName.Text + "','"
-                                    + tbPass.Text + "','"
+                                    + hashedPass + "','"                                    
                                     + tbEmail.Text + "')", con);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
 
-                        lblMsg.ForeColor = Color.Green;
-                        lblMsg.Text = "Student Registration Complete...";
-                        Response.Redirect("~/SignIn.aspx");
+                        try
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            lblMsg.ForeColor = Color.Green;
+                            lblMsg.Text = "Student Registration Complete...";
+                            Response.Redirect("~/SignIn.aspx");
+                        }
+                        catch (SqlException ex)
+                        {
+                            for (int i = 0; i < ex.Errors.Count; i++)
+                            {
+                                lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                                lblMsg.ForeColor = Color.Red;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            lblMsg.Text = "Error occured : " + ex.Message;
+                            lblMsg.ForeColor = Color.Red;
+                        }
+
+
+                        
                     } else
                     {
                         SqlCommand cmd = new SqlCommand("insert into Teacher values('"
@@ -48,14 +80,32 @@ public partial class SignUp : System.Web.UI.Page
                                     + tbUsername.Text + "','"
                                     + tbFirstName.Text + "','"
                                     + tbLastName.Text + "','"
-                                    + tbPass.Text + "','"
+                                    + hashedPass + "','"
                                     + tbEmail.Text + "')", con);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            lblMsg.ForeColor = Color.Green;
+                            lblMsg.Text = "Teacher Registration Complete...";
+                            Response.Redirect("~/SignIn.aspx");
+                        }
+                        catch (SqlException ex)
+                        {
+                            for (int i = 0; i < ex.Errors.Count; i++)
+                            {
+                                lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                                lblMsg.ForeColor = Color.Red;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            lblMsg.Text = "Error occured : " + ex.Message;
+                            lblMsg.ForeColor = Color.Red;
+                        }
 
-                        lblMsg.ForeColor = Color.Green;
-                        lblMsg.Text = "Teacher Registration Complete...";
-                        Response.Redirect("~/SignIn.aspx");
+
+
                     }
 
                     
@@ -72,7 +122,18 @@ public partial class SignUp : System.Web.UI.Page
                 lblMsg.Text = "All fields are required...";
             }
 
+
+            
+
                 
         }
     }
+
+   
+
+  
+
+    
+
+
 }

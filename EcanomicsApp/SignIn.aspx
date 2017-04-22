@@ -69,15 +69,18 @@
             <div class ="form-group">
                 <div class="col-md-2"></div>
                 <div class="col-md-6">
-                    <asp:Label ID="lblError" CssClass ="text-danger" runat="server" ></asp:Label>
+                    <asp:Label ID="lblMsg" CssClass ="text-danger" runat="server" ></asp:Label>
                 </div>
             </div>
     </div>
-    </form>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-</body>
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+    </form>
+
+        </body>
 </html>

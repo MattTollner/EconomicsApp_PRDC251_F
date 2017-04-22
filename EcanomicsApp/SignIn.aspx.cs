@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
+using System.Text;
 
 public partial class SignIn : System.Web.UI.Page
 {
@@ -16,19 +18,115 @@ public partial class SignIn : System.Web.UI.Page
 
     }
 
-    protected void btnLogIn_Click(object sender, EventArgs e)
+    void TestPassword()
     {
         String CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
+
         using (SqlConnection con = new SqlConnection(CS))
         {
+            DataTable dt1 = new DataTable();
+            SqlCommand cmd = new SqlCommand("select Username, PasswordHash, SaltKey from Student where Username='" + UserName.Text + "'", con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dt1);
+
+            string passwordHash = dt1.Rows[0]["PasswordHash"].ToString();
+            string saltKey = dt1.Rows[0]["SaltKey"].ToString();
+            string salt = dt1.Rows[0]["SaltKey"].ToString();
+            string plainTextPass = Password.Text;
+
+
+        }        
+        
+        
+        
+    }
+
+    protected void btnLogIn_Click(object sender, EventArgs e)
+    {
+
+        //TestPassword();
+
+        String CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
+        //using block ensures connection is closed when not used. No need for closing it
+        using (SqlConnection con = new SqlConnection(CS))
+        {         
             DataTable dt = new DataTable();
+
+          
 
             if (SelectType.Value == "Student")
             {
-                SqlCommand cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
-                con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);                
-                sda.Fill(dt);
+                SqlCommand cmd;
+                SqlDataAdapter sda;
+
+                try
+                {
+                    //SqlCommand cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
+                    cmd = new SqlCommand("select Student_ID, Username, PasswordHash from Student where Username='" + UserName.Text + "'", con);
+                    con.Open();
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                }
+                catch (SqlException ex)
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                        lblMsg.ForeColor = Color.Red;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblMsg.Text = "Error occured : " + ex.Message;
+                    lblMsg.ForeColor = Color.Red;
+                }
+                string abc;
+                string abcd = "";
+
+                if (dt.Rows.Count != 0)
+                {
+                    abc = dt.Rows[0]["Username"].ToString();
+                    abcd = dt.Rows[0]["PasswordHash"].ToString();
+                } else
+                {
+                    lblMsg.Text = "Wrong username";
+                }
+                
+
+                Boolean isCorrect = HashingPassword.VerifyHash(Password.Text, abcd);
+
+                if(isCorrect == true)
+                {
+                    try
+                    {
+                        con.Close();
+                        cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "'", con);
+                        con.Open();
+                        sda = new SqlDataAdapter(cmd);
+                        sda.Fill(dt);
+                    }
+                    catch (SqlException ex)
+                    {
+                        for (int i = 0; i < ex.Errors.Count; i++)
+                        {
+                            lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                            lblMsg.ForeColor = Color.Red;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMsg.Text = "Error occured : " + ex.Message;
+                        lblMsg.ForeColor = Color.Red;
+                    }
+
+                } else
+                {
+                    dt.Clear();
+                }             
+                
+              
+
             }
             else
             {
@@ -63,10 +161,13 @@ public partial class SignIn : System.Web.UI.Page
                 if(SelectType.Value == "Student")
                 {
                     Session["USERNAME"] = UserName.Text;
+                    Session["USERTYPE"] = "STUDENT";
+                    Session["USERID"] = dt.Rows[0]["Student_ID"].ToString();
                     Response.Redirect("~/home.aspx");
                 } else
                 {
                     Session["USERNAME"] = UserName.Text;
+                    Session["USERTYPE"] = "TEACHER";
                     Response.Redirect("~/home.aspx");
                 }
 
@@ -95,10 +196,38 @@ public partial class SignIn : System.Web.UI.Page
             }
             else
             {
-                lblError.ForeColor = Color.Red;
-                lblError.Text = "Invalid username or password";
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Invalid username or password";
             }
 
         }
     }
+
+   
 }
+
+    //private static Tuple<byte[], string> SaltHashPassword(string input, string salt)
+    //{
+    //    var password_bytes = ASCIIEncoding.ASCII.GetBytes(input);
+    //    byte[] data_input = new byte[salt.Length + password_bytes.Length];
+
+    //    for (int i = 0; i < password_bytes.Length; i++)
+    //    {
+    //        data_input[i] = password_bytes[i];
+    //    }
+
+    //    for (int i = 0; i < salt.Length; i++)
+    //    {
+    //        data_input[i + password_bytes.Length] = salt[i];
+    //    }
+
+
+    //    SHA512 shaM = new SHA512Managed();
+    //    var hashedByteArray = shaM.ComputeHash(data_input);
+
+    //    string hashedResult = Convert.ToBase64String(hashedByteArray);
+
+    //    return new Tuple<byte[], string>(salt, hashedResult);
+    //}
+
+    

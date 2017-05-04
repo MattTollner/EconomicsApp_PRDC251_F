@@ -11,4 +11,12 @@ public partial class Glossary : System.Web.UI.Page
     {
 
     }
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
+
 }

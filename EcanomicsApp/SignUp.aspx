@@ -14,10 +14,31 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/Custom-Cs.css" rel="stylesheet"/>
 </head>
-<body>
+<body style="background-color:#2B3A42">
+    <!--Start of navbar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="SignUp.aspx">Economics App</a>
+    </div>
+
+
+  </div><!-- /.container-fluid -->
+</nav>
+</br>	
+<!-- end of navbar-->
+
     <form id="form1" runat="server">
+
     <div>
-        <div class="center-page">
+            <div class="container">
+    
+        <div class="form-horizontal">
+            <div class="page-header">
+                <h1>Sign Up</h1>             
+        </div>
+    <div class="jumbotron">
 
             <label class="col-xs-11">User Type</label>
             <div class="col-xs-11">
@@ -64,6 +85,8 @@
             </div>       
      </div>
     </div>
+    </div>
+        </div>
     </form>
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

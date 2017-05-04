@@ -17,12 +17,28 @@
 
 
 </head>
-<body>
+<body style="background-color:#2B3A42">
+    <!--Start of navbar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="SignIn.aspx">Economics App</a>
+    </div>
+
+
+  </div><!-- /.container-fluid -->
+</nav>
+</br>	
+<!-- end of navbar-->
     <form id="form1" runat="server">
     <div class="container">
-            <div class="form-horizontal">
-                <h2>Sign In</h2>             
-
+    
+        <div class="form-horizontal">
+            <div class="page-header">
+                <h1>Sign In</h1>             
+        </div>
+    <div class="jumbotron">
                 <div class="form-group">
                     <asp:Label ID="Label3" runat="server" CssClass="col-md-2 control-label" Text="Sign in as"></asp:Label>
                     <div class="col-md-3">
@@ -72,6 +88,7 @@
                     <asp:Label ID="lblMsg" CssClass ="text-danger" runat="server" ></asp:Label>
                 </div>
             </div>
+    </div>
     </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -14,17 +14,48 @@
 
   </head>
   <body style="background-color:#2B3A42">
-	<div class="container">
-	<ul class="list-inline">
-		<li><a href="home.aspx">Home</a></li>
-		<li><a href="RevisionMaterial.aspx">Revision Material</a></li>
-		<li><a href="#">Quiz</a></li>
-		<li><a href="#">Quiz Archive</a></li>
+	
+      <!--Start of navbar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home.aspx">Economics App</a>
+    </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Quiz</a></li>
+        <li><a href="#">Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
-		<li style="float:right"><a href="#">Account Details</a></li>
-	</ul>
+	  </ul>
+     
 	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Edit Account</a></li>
+            <li role="separator" class="divider"></li>
+            <li><asp:Button ID="btnLogOut" CssClass="btn bnt-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav></br>
+<!-- end of navbar-->
+
+
+	<div class="container">
 	<div class="page-header">
 	<h1>A-level Economics 101</h1>
 	</div>

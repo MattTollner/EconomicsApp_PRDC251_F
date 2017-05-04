@@ -14,19 +14,52 @@
 
   </head>
   <body style="background-color:#2B3A42">
-	<div class="container">
-	<ul class="list-inline">
-		<li><a href="home.aspx">Home</a></li>
-		<li><a href="RevisionMaterial.aspx">Revision Material</a></li>
-		<li><a href="#">Quiz</a></li>
-		<li><a href="#">Quiz Archive</a></li>
+	
+	<!--Start of navbar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home.aspx">Economics App</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Quiz</a></li>
+        <li><a href="#">Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
-		<li style="float:right"><a href="#">Account Details</a></li>
-	</ul>
+	  </ul>
+     
 	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Account Details</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br/>	
+<!-- end of navbar-->
+
+	<div class="container">
 	<div class="page-header">
-	<h1>A-level Economics 101</h1>
+	<h1>AS Micro Economics</h1>
 	</div>
 	
 	<div class="jumbotron">
@@ -34,12 +67,143 @@
 	<center>
 	<div class="btn-group-vertical">
 	
-    <a href="TheEconProbPageOne.aspx" class="btn btn-default btn-lg">Section One - The Economic Problem</a><br />
-	<a href="#" class="btn btn-default btn-lg">Section Two - Competitive Markets</a><br />
-	<a href="#" class="btn btn-default btn-lg">Section Three - Business Economics</a><br />
-	<a href="#" class="btn btn-default btn-lg">Section Four - Market Failure</a><br />
-	<a href="#" class="btn btn-default btn-lg">Section Five - Government Intervention</a><br />
+		<div class="row">
+			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-xs">Section One - The Economic Problem</a>
+			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
 	
+			<!--modal button 1-->
+			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal1"></a>
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal1" role="dialog">
+				<div class="modal-dialog modal-sm">
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Section One - The Economic Problem</h4>
+					</div>
+					<div class="modal-body">
+					  <p>Load of text on this topic here *J.M.E hand*</p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+	<!--modal ends--><br/>
+        
+    	<div class="row">		
+	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Two - Competitive Markets</a>
+	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Two</a>
+	
+	<!--modal button 2-->
+			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal2"></a>
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal2" role="dialog">
+				<div class="modal-dialog">
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Section Two - Competitive market</h4>
+					</div>
+					<div class="modal-body">
+					  <p>Some text in the modal.</p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			
+		</div>
+	<!--modal ends--><br/>
+
+    	<div class="row">
+	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Three - Business Economics</a>
+	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Three</a>
+	
+	<!--modal button 2-->
+			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal3"></a>
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal3" role="dialog">
+				<div class="modal-dialog">
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Section Two - Business Economics</h4>
+					</div>
+					<div class="modal-body">
+					  <p>Some text in the modal.</p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			
+		</div>
+	<!--modal ends--><br/>
+
+    	<div class="row">
+	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Four - Market Failure</a>
+	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Four</a>
+		<!--modal button 2-->
+			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal4"></a>
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal4" role="dialog">
+				<div class="modal-dialog">
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Section Four - Market Failure</h4>
+					</div>
+					<div class="modal-body">
+					  <p>Some text in the modal.</p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			
+		</div>
+	<!--modal ends--><br/>
+
+        	<div class="row">
+	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Five - Government Intervention</a>
+	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Five</a>
+			<!--modal button 2-->
+			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal5"></a>
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal5" role="dialog">
+				<div class="modal-dialog">
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Section Five - Government intervention</h4>
+					</div>
+					<div class="modal-body">
+					  <p>Some text in the modal.</p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			
+		</div>
+	<!--modal ends--><br/>
+
 	</div></center>
 	</div>
 	</div>	

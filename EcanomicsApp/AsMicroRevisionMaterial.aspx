@@ -14,7 +14,8 @@
 
   </head>
   <body style="background-color:#2B3A42">
-	
+	    <form id="form1" runat="server">
+
 	<!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -34,7 +35,7 @@
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Quiz</a></li>
-        <li><a href="#">Quiz Archive</a></li>
+        <li><a href="UpdateStudentInformation.aspx">Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>
@@ -47,7 +48,7 @@
             <li><a href="#">Account Details</a></li>
             <li><a href="#">Change Password</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Logout</a></li>
+            <li><asp:Button ID="btnLogOut" CssClass="btn btn-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
           </ul>
         </li>
       </ul>
@@ -222,5 +223,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+            </form>
   </body>
 </html>

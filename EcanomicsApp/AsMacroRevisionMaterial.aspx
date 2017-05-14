@@ -14,7 +14,7 @@
 
   </head>
   <body style="background-color:#2B3A42">
-	
+	<form id="form1" runat="server">
 		 <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -43,9 +43,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Edit Account</a></li>
+            <li><a href="UpdateStudentInformation.aspx">Edit Account</a></li>
             <li role="separator" class="divider"></li>
-            <li><asp:Button ID="btnLogOut" CssClass="btn bnt-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
+            <li><asp:Button ID="btnLogOut" CssClass="btn btn-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
           </ul>
         </li>
       </ul>
@@ -65,7 +65,7 @@
 	
 	<div class="btn-group-vertical">
 	
-	<a href="#" class="btn btn-default btn-lg"></a>
+	
     		<div class="row">
 			<a href="#" class="btn btn-default btn-lg hidden-xs">Section One - Measuring Economic Performance</a>
 			<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
@@ -197,5 +197,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+        </form>
   </body>
 </html>

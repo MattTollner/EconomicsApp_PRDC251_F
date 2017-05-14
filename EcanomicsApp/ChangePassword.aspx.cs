@@ -24,7 +24,15 @@ public partial class ChangePassword : System.Web.UI.Page
         return true;
     }
 
- 
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
+
+
 
     protected void btnChangePass_Click(object sender, EventArgs e)
     {

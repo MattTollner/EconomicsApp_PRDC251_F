@@ -11,4 +11,11 @@ public partial class LayoutMaster : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
 }

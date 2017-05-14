@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Economics App</title>
+    <title>Economics App</title> 
 	
 	<link href="css/bootstrap.css" rel="stylesheet">
 	
@@ -44,16 +44,16 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Edit Account</a></li>
+            <li><a href="UpdateStudentInformation.aspx">Edit Account</a></li>
             <li role="separator" class="divider"></li>
-            <li><asp:Button ID="btnLogOut" CssClass="btn bnt-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
+            <li><asp:Button ID="btnLogOut" CssClass="btn btn-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</br>
+<br/>
 <!-- end of navbar-->
 
 
@@ -79,7 +79,7 @@
 	
 	<a href="NewsOutlet.aspx" class="btn btn-default btn-lg">News Outlets <span class="glyphicon glyphicon-text-background"></span></a><br />
     
-    <asp:Label ID="successLbl" runat="server"  CssClass="btn bnt-default navbar-btn" Text="Log Out"></asp:Label>
+    <h5><asp:Label ID="successLbl" runat="server"  CssClass="btn bnt-default navbar-btn" Text="Log Out"></asp:Label></h5>
     </div>
 	</center>
 	

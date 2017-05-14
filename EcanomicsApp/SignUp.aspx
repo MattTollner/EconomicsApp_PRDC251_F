@@ -11,8 +11,7 @@
     <title>Sign Up</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/Custom-Cs.css" rel="stylesheet"/>
+    <link href="css/bootstrap.css" rel="stylesheet" />
 </head>
 <body style="background-color:#2B3A42">
     <!--Start of navbar-->
@@ -20,27 +19,26 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="SignUp.aspx">Economics App</a>
+      <a class="navbar-brand" href="SignIn.aspx">Economics App</a>
     </div>
 
 
   </div><!-- /.container-fluid -->
 </nav>
-</br>	
+<br/>	
 <!-- end of navbar-->
 
     <form id="form1" runat="server">
 
-    <div>
             <div class="container">
     
         <div class="form-horizontal">
             <div class="page-header">
                 <h1>Sign Up</h1>             
         </div>
-    <div class="jumbotron">
 
-            <label class="col-xs-11">User Type</label>
+    
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;"> User Type </h5></label>
             <div class="col-xs-11">
                 <select id="SelectType" runat="server">
                             <option>Student</option>
@@ -48,45 +46,45 @@
                         </select>            
             </div>
 
-            <label class="col-xs-11">Email</label>
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;">Email</h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbEmail" runat="server" Class ="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>          
             </div>
 
-            <label class="col-xs-11">Username</label>
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Username </h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbUsername" runat="server" Class ="form-control" placeholder="Username"></asp:TextBox>
             </div>
 
-            <label class="col-xs-11">First Name</label>
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;"> First Name </h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbFirstName" runat="server" Class ="form-control" placeholder="Username"></asp:TextBox>
             </div>
 
-            <label class="col-xs-11">Last Name</label>
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Last Name </h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbLastName" runat="server" Class ="form-control" placeholder="Username"></asp:TextBox>
             </div>
 
-            <label class="col-xs-11">Password</label>
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Password </h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbPass" runat="server" Class ="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
             </div>
-
-            <label class="col-xs-11">Confirm Password</label>
+            
+            <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Confirm Password </h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbCPass" runat="server" Class ="form-control" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>          
-            </div>         
-
+            </div>        
+             
+            
        
-            <div class="col-xs-11 space-vert">
-                <asp:Button ID="btnSignUp" runat="server" Class="btn-success" Text="Sign Up" OnClick="btnSignUp_Click" />
+            <div class="col-xs-11 control-group">
+                <asp:Button ID="btnSignUp" runat="server" Class="btn btn-default" Text="Sign Up" OnClick="btnSignUp_Click"/>
                 <asp:Label ID="lblMsg" runat="server"></asp:Label>
             </div>       
      </div>
+   
     </div>
-    </div>
-        </div>
     </form>
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -13,8 +13,11 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Custom-Cs.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+
 </head>
 <body style="background-color:#2B3A42">
+   <form id="form1" runat="server">
 
     	 <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -44,7 +47,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Edit Account</a></li>
+            <li><a href="UpdateStudentInformation.aspx">Edit Account</a></li>
             <li role="separator" class="divider"></li>
             <li><asp:Button ID="btnLogOut" CssClass="btn bnt-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
           </ul>
@@ -63,7 +66,7 @@
 	<div class="jumbotron">
 	<div class ="row">
 
-    <form id="form1" runat="server">
+    
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
             <div class="center-page">
@@ -96,12 +99,11 @@
                 </div>
 
                 <div class="col-xs-11">
-                    <a class="btn btn-large btn-info" href="ChangePassword.aspx">Update Passowrd?</a>
+                    <a class="btn btn-large btn-info" href="ChangePassword.aspx">Change Passowrd</a>
                 </div>
 
 
-
-                <asp:Label ID="lblMsg" class="col-xs-11" runat="server">HELLLJFDL:KJDL:FSKJL:KSDJFL:KJSDL:FJ:LKF</asp:Label>
+                <asp:Label ID="lblMsg" class="col-xs-11" runat="server"><!--HELLLJFDL:KJDL:FSKJL:KSDJFL:KJSDL:FJ:LKF--></asp:Label>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <!-- Modal -->

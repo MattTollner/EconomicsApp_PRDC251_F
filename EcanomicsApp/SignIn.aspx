@@ -11,9 +11,7 @@
     <title>Sign In</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/Custom-Cs.css" rel="stylesheet"/>
-    <link href="content/bootstrap-select.css" rel ="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
 
 
 </head>
@@ -29,7 +27,7 @@
 
   </div><!-- /.container-fluid -->
 </nav>
-</br>	
+<br/>	
 <!-- end of navbar-->
     <form id="form1" runat="server">
     <div class="container">
@@ -37,7 +35,7 @@
         <div class="form-horizontal">
             <div class="page-header">
                 <h1>Sign In</h1>             
-        </div>
+            </div>
     <div class="jumbotron">
                 <div class="form-group">
                     <asp:Label ID="Label3" runat="server" CssClass="col-md-2 control-label" Text="Sign in as"></asp:Label>
@@ -51,15 +49,15 @@
 
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="Username"></asp:Label>
-                    <div class="col-md-3">
+                    <div class="col-md-10">
                         <asp:TextBox ID="UserName" CssClass="form-control" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername" CssClass="text-danger" runat="server" ErrorMessage="Username required..." ControlToValidate="UserName"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <asp:Label ID="Label2" runat="server" CssClass="col-md-2 control-label" Text="Password"></asp:Label>
-                    <div class="col-md-3">
+                    <asp:Label ID="Label2" runat="server" CssClass="col-md-2 control-label" Text="Password">Password</asp:Label>
+                    <div class="col-md-10">
                         <asp:TextBox ID="Password" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" CssClass="text-danger" runat="server" ErrorMessage="Password required..." ControlToValidate="Password"></asp:RequiredFieldValidator>
                     </div>

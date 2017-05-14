@@ -81,10 +81,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section One - The Economic Problem</h4>
+					  <p class="modal-title">Section One - The Economic Problem</p>
 					</div>
 					<div class="modal-body">
-					  <p>Load of text on this topic here *J.M.E hand*</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -96,22 +96,22 @@
 	<!--modal ends--><br/>
         
     	<div class="row">		
-	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Two - Competitive Markets</a>
-	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Two</a>
+	<a href="CompetitiveMarket.aspx" class="btn btn-default btn-lg hidden-xs">Section Two - Competitive Markets</a>
+	<a href="CompetitiveMarket.aspx" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Two</a>
 	
 	<!--modal button 2-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal2"></a>
 			<!-- Modal -->
 			  <div class="modal fade" id="myModal2" role="dialog">
-				<div class="modal-dialog">
+				<div class="modal-dialog modal-sm">
 				  <!-- Modal content-->
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Two - Competitive market</h4>
+					  <p class="modal-title">Section Two - Competitive market</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -127,7 +127,7 @@
 	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Three - Business Economics</a>
 	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Three</a>
 	
-	<!--modal button 2-->
+	<!--modal button 3-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal3"></a>
 			<!-- Modal -->
 			  <div class="modal fade" id="myModal3" role="dialog">
@@ -136,10 +136,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Two - Business Economics</h4>
+					  <p class="modal-title">Section Two - Business Economics</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -154,7 +154,7 @@
     	<div class="row">
 	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Four - Market Failure</a>
 	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Four</a>
-		<!--modal button 2-->
+		<!--modal button 4-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal4"></a>
 			<!-- Modal -->
 			  <div class="modal fade" id="myModal4" role="dialog">
@@ -163,10 +163,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Four - Market Failure</h4>
+					  <p class="modal-title">Section Four - Market Failure</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -181,7 +181,7 @@
         	<div class="row">
 	<a href="#" class="btn btn-default btn-lg hidden-xs">Section Five - Government Intervention</a>
 	<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Five</a>
-			<!--modal button 2-->
+			<!--modal button 5-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal5"></a>
 			<!-- Modal -->
 			  <div class="modal fade" id="myModal5" role="dialog">
@@ -190,10 +190,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Five - Government intervention</h4>
+					  <p class="modal-title">Section Five - Government intervention</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

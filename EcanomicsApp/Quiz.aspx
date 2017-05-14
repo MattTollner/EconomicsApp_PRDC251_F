@@ -10,38 +10,60 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/Custom-Cs.css" rel="stylesheet"/>
 
-    <title>Change Password</title>
+    <title>Quiz</title>
 
 
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+
     <div>
-        <div class="center-page">          
-           
-            <label class="col-xs-11">Quiz Topic</label>
-            <div class="col-xs-11">
-                <asp:TextBox ID="tbCurrentPassword" runat="server" Class ="form-control" placeholder="Email" TextMode="Password"></asp:TextBox>          
-            </div>         
+        <form>
+            <label id ="questionOneLbl">The Question</label>
+            <input type="radio" name="q9" value="0"/><label id ="q2a">A. A rise in unemployment</label><br />
+            <input type="radio" name="q9" value="25"/><label id ="q2b">B. A cut in income tax rates</label><br />
+            <input type="radio" name="q9" value="0"/><label id ="q2c">C. A fall in the exchange rate</label><br />
+            <input type="radio" name="q9" value="0"/><label id ="q2d">D. A rise in the rate of Value Added Tax (VAT)</label><br />
+        </form>
 
-            <label class="col-xs-11">Password</label>
-                <div class="col-xs-11">
-                <asp:TextBox ID="tbPass" runat="server" Class ="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-            </div>
+        <form>
+            <label id ="questionTwoLbl">The Question</label>
+            <input type="radio" name="q9" value="0"/><label for="q9a">A. A rise in unemployment</label><br />
+            <input type="radio" name="q9" value="25"/><label for="q9b">B. A cut in income tax rates</label><br />
+            <input type="radio" name="q9" value="0"/><label for="q9c">C. A fall in the exchange rate</label><br />
+            <input type="radio" name="q9" value="0"/><label for="q9d">D. A rise in the rate of Value Added Tax (VAT)</label><br />
+        </form>
 
-            <label class="col-xs-11">Confirm Password</label>
-                <div class="col-xs-11">
-                <asp:TextBox ID="tbCPass" runat="server" Class ="form-control" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>          
-            </div>  
-                  
-            <div class="col-xs-11 space-vert">
-                <%--<asp:Button ID="btnChangePassword3" runat="server" Class="btn-success" Text="Change Password" OnClick="btnSignUp_Click" />--%>
-                
+        <form>
+            <label id ="questionThreeLbl">The Question</label>
+            <input type="radio" name="q9" value="0"/><label for="q9a">A. A rise in unemployment</label><br />
+            <input type="radio" name="q9" value="25"/><label for="q9b">B. A cut in income tax rates</label><br />
+            <input type="radio" name="q9" value="0"/><label for="q9c">C. A fall in the exchange rate</label><br />
+            <input type="radio" name="q9" value="0"/><label for="q9d">D. A rise in the rate of Value Added Tax (VAT)</label><br />
+        </form>
 
-                <asp:Label ID="lblMsg" runat="server"></asp:Label>
-            </div>       
-     </div>
+        
     </div>
+
+         <asp:Repeater ID="Repeater1" runat="server">
+            
+                <%--<div class="question"> <input type="radio" name="q8" value="0"><label for="q8d"></label></div>                 
+                <div class="answer"><%# DataBinder.Eval(Container.DataItem,"Question") %></div>--%>
+                <ItemTemplate>
+          <tr>
+              <td >
+                <%--<div class="question"> <input type="radio" name="q8" value="0"><label for="q8d"></label></div>                 
+                --%>
+              </td>
+              <td>
+                  <div class="answer"><%# DataBinder.Eval(Container.DataItem,"Quiz_Question") %></div>
+              </td>
+          </tr>
+          </ItemTemplate>
+            
+         </asp:Repeater>
+        </div>
     </form>
 
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

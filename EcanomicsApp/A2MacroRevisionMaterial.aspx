@@ -69,7 +69,7 @@
 		<div class="row">
 			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-xs">Section One - The National Economy</a>
 			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
-			<!--modal button 2-->
+			<!--modal button 1-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal1"></a>
 			<!-- Modal -->
 			  <div class="modal fade" id="myModal1" role="dialog">
@@ -78,10 +78,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section One - The National Economy</h4>
+					  <p class="modal-title">Section One - The National Economy</p>
 					</div>
 					<div class="modal-body">
-					  <p>Load of text on this topic here *J.M.E hand*</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -104,10 +104,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Two - The Global Economy</h4>
+					  <p class="modal-title">Section Two - The Global Economy</p>
 					</div>
 					<div class="modal-body">
-					  <p>Load of text on this topic here *J.M.E hand*</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -121,7 +121,7 @@
 		<div class="row">
 			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-xs">Section Three - Development and Sustainability</a>
 			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section Threee</a>
-			<!--modal button 2-->
+			<!--modal button 3-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal3"></a>
 			<!-- Modal -->
 			  <div class="modal fade" id="myModal3" role="dialog">
@@ -130,10 +130,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Three - Development and Sustainability</h4>
+					  <p class="modal-title">Section Three - Development and Sustainability</p>
 					</div>
 					<div class="modal-body">
-					  <p>Load of text on this topic here *J.M.E hand*</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

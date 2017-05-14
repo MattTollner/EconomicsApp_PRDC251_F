@@ -65,17 +65,17 @@
 	
 	
 	<center>
-	<div class="btn-group-vertical">
 	
-	<a href="http://www.bbc.co.uk/news/business/economy" class="btn btn-default btn-lg">BBC News - Economics</a><br />
 	
-	<a href="http://www.economist.com/" class="btn btn-default btn-lg">Economist</a><br />
+	<a href="http://www.bbc.co.uk/news/business/economy" target="_blank"><img class="img-responsive" src="images/bbcnews.png" style="width:375px;height:210px;"></a><br/>
 	
-	<a href="https://www.ft.com/?edition=uk" class="btn btn-default btn-lg">Financial Times</a><br />
+	<a href="http://www.economist.com/" target="_blank"><img class="img-responsive" src="images/economist.png" style="width:375px;height:210px;"></a><br/>
 	
-	<a href="https://www.theguardian.com/business/economics" class="btn btn-default btn-lg">The Guardian - Economics</a><br />
+	<a href="https://www.ft.com/?edition=uk"  target="_blank"><img class="img-responsive" src="images/financialtimes.png" style="width:375px;"></a><br/>
 	
-	<a href="https://www.tutor2u.net/economics" class="btn btn-default btn-lg">Tutor2u - Economics</a><br />
+	<a href="https://www.theguardian.com/business/economics" target="_blank"><img class="img-responsive" src="images/guardian.png" style="width:375px;"></a><br/>
+	
+	<a href="https://www.tutor2u.net/economics"  target="_blank"><img class="img-responsive" src="images/tutor2u.png" style="width:340px;height:210px;"></a><br/>
 	
 	</center>
 	</div>
@@ -83,7 +83,7 @@
 	</div>	
 	
 	
-	</div>
+	
 
 	
 	

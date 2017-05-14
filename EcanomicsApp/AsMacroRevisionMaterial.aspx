@@ -79,10 +79,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section One - Measuring Economic Performance</h4>
+					  <p class="modal-title">Section One - Measuring Economic Performance</p>
 					</div>
 					<div class="modal-body">
-					  <p>Load of text on this topic here *J.M.E hand*</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -107,10 +107,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Two - Aggregate Demand and Aggregate Supply</h4>
+					  <p class="modal-title">Section Two - Aggregate Demand and Aggregate Supply</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -136,10 +136,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Three - Government Economic Policy Objectives</h4>
+					  <p class="modal-title">Section Three - Government Economic Policy Objectives</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -163,10 +163,10 @@
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Section Four - Macroeconomic Policy Instruments</h4>
+					  <p class="modal-title">Section Four - Macroeconomic Policy Instruments</p>
 					</div>
 					<div class="modal-body">
-					  <p>Some text in the modal.</p>
+					  <p>Some information on the given topic (Place Holder)</p>
 					</div>
 					<div class="modal-footer">
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

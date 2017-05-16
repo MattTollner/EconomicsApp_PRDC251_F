@@ -29,16 +29,23 @@ public partial class ChangePassword : System.Web.UI.Page
     {
         using (SqlConnection con = new SqlConnection(CS))
         {
-            DataTable dt1 = new DataTable();            
+            DataTable dt1 = new DataTable();
+            DataTable dt2 = new DataTable();
+            SqlCommand cmd;
+            SqlDataAdapter sda;
 
             for (int i = 1; i < 4; i++)
             {
-                SqlCommand cmd = new SqlCommand("select Quiz_Question from Quiz_Questions WHERE Question_ID = '" + i + "'", con);
-             
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                cmd = new SqlCommand("select Quiz_Question from Quiz_Questions WHERE Question_ID = '" + i + "'", con);             
+                sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt1);
                 questionIdArray.Add(i);
-                
+
+                cmd = new SqlCommand("select Quiz_Question from Quiz_Questions WHERE Question_ID = '" + i + "'", con);
+                sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt1);
+                questionIdArray.Add(i);
+
             }
             
             

@@ -269,32 +269,9 @@ public partial class SignIn : System.Web.UI.Page
 
         }
     }
-
    
 }
 
-    //private static Tuple<byte[], string> SaltHashPassword(string input, string salt)
-    //{
-    //    var password_bytes = ASCIIEncoding.ASCII.GetBytes(input);
-    //    byte[] data_input = new byte[salt.Length + password_bytes.Length];
-
-    //    for (int i = 0; i < password_bytes.Length; i++)
-    //    {
-    //        data_input[i] = password_bytes[i];
-    //    }
-
-    //    for (int i = 0; i < salt.Length; i++)
-    //    {
-    //        data_input[i + password_bytes.Length] = salt[i];
-    //    }
-
-
-    //    SHA512 shaM = new SHA512Managed();
-    //    var hashedByteArray = shaM.ComputeHash(data_input);
-
-    //    string hashedResult = Convert.ToBase64String(hashedByteArray);
-
-    //    return new Tuple<byte[], string>(salt, hashedResult);
-    //}
+   
 
     

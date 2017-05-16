@@ -52,13 +52,13 @@ public partial class SignIn : System.Web.UI.Page
         using (SqlConnection con = new SqlConnection(CS))
         {         
             DataTable dt = new DataTable();
+            SqlCommand cmd;
+            SqlDataAdapter sda;
 
-          
-
+            //Student login
             if (SelectType.Value == "Student")
             {
-                SqlCommand cmd;
-                SqlDataAdapter sda;
+                
 
                 try
                 {
@@ -130,10 +130,73 @@ public partial class SignIn : System.Web.UI.Page
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("select * from Teacher where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
-                con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);                
-                sda.Fill(dt);
+                //TEACHER SIGN IN
+                try
+                {
+                    //SqlCommand cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
+                    cmd = new SqlCommand("select Teacher_ID, Username, PasswordHash from Teacher where Username='" + UserName.Text + "'", con);
+                    con.Open();
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                }
+                catch (SqlException ex)
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                        lblMsg.ForeColor = Color.Red;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblMsg.Text = "Error occured : " + ex.Message;
+                    lblMsg.ForeColor = Color.Red;
+                }
+                string abc;
+                string abcd = "";
+
+                if (dt.Rows.Count != 0)
+                {
+                    abc = dt.Rows[0]["Username"].ToString();
+                    abcd = dt.Rows[0]["PasswordHash"].ToString();
+                }
+                else
+                {
+                    lblMsg.Text = "Wrong username";
+                }
+
+
+                Boolean isCorrect = HashingPassword.VerifyHash(Password.Text, abcd);
+
+                if (isCorrect == true)
+                {
+                    try
+                    {
+                        con.Close();
+                        cmd = new SqlCommand("select * from Teacher where Username='" + UserName.Text + "'", con);
+                        con.Open();
+                        sda = new SqlDataAdapter(cmd);
+                        sda.Fill(dt);
+                    }
+                    catch (SqlException ex)
+                    {
+                        for (int i = 0; i < ex.Errors.Count; i++)
+                        {
+                            lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                            lblMsg.ForeColor = Color.Red;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMsg.Text = "Error occured : " + ex.Message;
+                        lblMsg.ForeColor = Color.Red;
+                    }
+
+                }
+                else
+                {
+                    dt.Clear();
+                }
             }
 
 
@@ -158,14 +221,18 @@ public partial class SignIn : System.Web.UI.Page
                     Response.Cookies["PWD"].Expires = DateTime.Now.AddDays(-1);
                 }
 
+
+                //WHICH PAGE REDIRECT
                 if(SelectType.Value == "Student")
                 {
+                    //Go to student page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "STUDENT";
                     Session["USERID"] = dt.Rows[0]["Student_ID"].ToString();
                     Response.Redirect("~/home.aspx");
                 } else
                 {
+                    //go to teacehr page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "TEACHER";
                     Response.Redirect("~/home.aspx");

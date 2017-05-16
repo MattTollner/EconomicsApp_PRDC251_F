@@ -229,13 +229,13 @@ public partial class SignIn : System.Web.UI.Page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "STUDENT";
                     Session["USERID"] = dt.Rows[0]["Student_ID"].ToString();
-                    Response.Redirect("~/home.aspx");
+                    Response.Redirect("~/Student/home.aspx");
                 } else
                 {
                     //go to teacehr page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "TEACHER";
-                    Response.Redirect("~/home.aspx");
+                    Response.Redirect("~/Teacher/TeacherHome.aspx");
                 }
 
            

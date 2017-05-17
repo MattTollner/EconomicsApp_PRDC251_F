@@ -235,6 +235,7 @@ public partial class SignIn : System.Web.UI.Page
                     //go to teacehr page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "TEACHER";
+                    Session["USERID"] = dt.Rows[0]["Teacher_ID"].ToString();
                     Response.Redirect("~/Teacher/TeacherHome.aspx");
                 }
 

@@ -28,19 +28,20 @@ public partial class SignUp : System.Web.UI.Page
         try
         {
             //get student details to fill textbox 
-            cmd = new SqlCommand("select * from Student where Student_ID ='" + Session["USERID"].ToString() + "'", con);
+            cmd = new SqlCommand("select * from Student where Student_ID ='" +
+                Session["USERID"].ToString() + "'", con);
             con.Open();
             sda = new SqlDataAdapter(cmd);
             sda.Fill(dt);
 
 
-        }
+            }
         catch (SqlException ex)
         {
             for (int i = 0; i < ex.Errors.Count; i++)
             {
                 lblMsg.Text = "SQL Error : ensure connection to plymouth server";
-                lblMsg.ForeColor = Color.Red;
+                lblMsg.ForeColor = Color.Red; //Change this Marcus.
             }
         }
         catch (Exception ex)
@@ -65,16 +66,18 @@ public partial class SignUp : System.Web.UI.Page
         {
             lblMsg.Text = "Error Message";
             con.Close();
-        }
+        } 
 
 
     }
 
+    //Changing the students password 
+    
     protected void ChangePass(Object sender, EventArgs e)
     {
-        if (tbPass.Text == tbCPass.Text)
+        if (tbPass.Text == tbCPass.Text)     
         {         
-           
+            //selecting the student table
             if (Session["USERTYPE"].ToString() == "STUDENT")
             {
                 //Get student information 
@@ -87,7 +90,7 @@ public partial class SignUp : System.Web.UI.Page
 
                 if (HashingPassword.VerifyHash(tbCurrentPassword.Text, origianlPasswordHash) == true)
                 {
-                    //Udate password
+                    //Udate password as well as has it
                     string updatedPasswordHash = HashingPassword.ComputeHash(tbPass.Text, null);
 
 
@@ -133,7 +136,7 @@ public partial class SignUp : System.Web.UI.Page
             {
                 lblMsg.Text = "Error occured : " + ex.Message;
                 lblMsg.ForeColor = Color.Red;
-            }
+            }   
         }
         catch (Exception ex)
         {
@@ -167,7 +170,7 @@ public partial class SignUp : System.Web.UI.Page
                             cmd.Parameters.AddWithValue("@email", tbEmail.Text);
                             cmd.Parameters.AddWithValue("@us", tbUsername.Text);
                             Session["USERNAME"] = tbUsername.Text;
-                            
+                                
                             cmd.ExecuteNonQuery();
                             con.Close();
                             lblMsg.Text = "Updated Information";

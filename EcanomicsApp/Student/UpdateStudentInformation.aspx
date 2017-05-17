@@ -55,7 +55,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav></br>
+</nav><br/>
 <!-- end of navbar-->
 
     <div class="container">
@@ -66,7 +66,7 @@
 	<div class="jumbotron">
 	<div class ="row">
 
-    
+        <!--updating the page with the students information-->
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
             <div class="center-page">
@@ -107,7 +107,7 @@
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <!-- Modal -->
-                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label><br />
+                       <asp:Label ID="Label1" runat="server" Text=""></asp:Label><br />
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                     </ContentTemplate>
-                </asp:UpdatePanel>
+                </asp:UpdatePanel> 
 
             </div>
         </div>

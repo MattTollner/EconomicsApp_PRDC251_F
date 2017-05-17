@@ -31,7 +31,7 @@ public partial class Quiz : System.Web.UI.Page
     }
 
     
-
+    //Gets 10 random digets
     private void getRandomQuestions()
     {
         for (int i = 0; i < 20; ++i)
@@ -44,12 +44,10 @@ public partial class Quiz : System.Web.UI.Page
 
     }
     
-
+    //Method to insert the quesiton data
     private void populateQuestions()
     {
-
         
-
         using (SqlConnection con = new SqlConnection(CS))
         {
             DataTable dt1 = new DataTable();
@@ -58,18 +56,18 @@ public partial class Quiz : System.Web.UI.Page
             SqlCommand cmd;
             SqlDataAdapter sda;
 
-            //Counter for quetions
+            //Counter for 10 quetions 
             for (int i = 1; i < 11; i++)
             {
+                //Questions
                 cmd = new SqlCommand("select Question from Questions WHERE Question_ID = '" + questionIdArray[i] + "'", con);
                 sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt1);
-                //questionIdArray.Add(i);
-
+                sda.Fill(dt1);              
+                //Dummy Answers
                 cmd = new SqlCommand("select * from Dummy WHERE Question_ID = '" + questionIdArray[i] + "'", con);
                 sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt2);
-
+                //Answers
                 cmd = new SqlCommand("select Answer from Answers WHERE Question_ID = '" + questionIdArray[i] + "'", con);
                 sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt3);
@@ -79,9 +77,11 @@ public partial class Quiz : System.Web.UI.Page
                 if (dt1.Rows.Count != 0)
                 {
                     //Populate questions
+
+
                     char tChar = 'a';
                    
-                    //Create dummy/answer array      
+                    //Create dummy/answer array    
                    
                     questionDummyArray = new string[] {                        
                         dt2.Rows[0]["Dummy_Answer"].ToString(),
@@ -93,7 +93,7 @@ public partial class Quiz : System.Web.UI.Page
 
 
 
-                    //Populate question
+                    //Populate question label 
                     Label qLbl = Page.FindControl("question" + i) as Label;
                     qLbl.Text = dt1.Rows[i-1]["Question"].ToString();
                     

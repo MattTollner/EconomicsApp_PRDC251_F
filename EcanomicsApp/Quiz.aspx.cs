@@ -87,31 +87,60 @@ public partial class Quiz : System.Web.UI.Page
                     questionDummyArray = new string[] {                        
                         dt2.Rows[0]["Dummy_Answer"].ToString(),
                         dt2.Rows[1]["Dummy_Answer"].ToString(),
-                        dt2.Rows[2]["Dummy_Answer"].ToString(),
-                        dt3.Rows[0]["Answer"].ToString()
-                    };                    
+                        dt2.Rows[2]["Dummy_Answer"].ToString()                       
+                    };
+                    //Shuffle array
                     Shuffle(questionDummyArray);
 
                     //Populate question label 
                     Label qLbl = Page.FindControl("question" + i) as Label;
                     qLbl.Text = dt1.Rows[i-1]["Question"].ToString();
+
+
+                    //Add answer
+                    int ansLoc = _random.Next(0, 3);
+                    char ansChar = tChar;
+                    ansChar += (char)ansLoc;
+                    string temp2 = "q" + i + (ansChar);                    
+                    Label tLbl = Page.FindControl(temp2) as Label;
+                    tLbl.Text = dt3.Rows[0]["Answer"].ToString();
+                    
+                    temp2 = "Q" + i + "RD" + (ansChar);
+                    RadioButton answerRd = Page.FindControl(temp2) as RadioButton;
+                    answerRd.Attributes.Add("value", "20");
                     
 
+
                     //Fill dummy answers
-                    for (int f = 1; f < 5; f++)
+                    for (int f = 1; f < 4; f++)
                     {
                         string temp = "q" + i + tChar;
-                        Label tLbl = Page.FindControl(temp) as Label;
-                        Console.WriteLine(f - 1);
-                        Console.WriteLine(questionDummyArray[0]);
-                        tLbl.Text = questionDummyArray[f - 1];
-                        tChar++;
-                        dt2.Clear();
-                        dt3.Clear();
+                        tLbl = Page.FindControl(temp) as Label;
+                        if(tLbl.Text == "Label")
+                        {
+
+                            tLbl.Text = questionDummyArray[f - 1];
+                            tChar++;
+                            dt2.Clear();
+                            dt3.Clear();
+                        }
+                        else
+                        {
+                            tChar++;
+                            temp = "q" + i + (tChar);
+                            tLbl = Page.FindControl(temp) as Label;
+                            tLbl.Text = questionDummyArray[f - 1];
+                            //Skip forward two                          
+                            tChar++;
+                            dt2.Clear();
+                            dt3.Clear();
+
+                        }
+                       
                     }                   
                 } else
                 {
-                    //
+                    Console.WriteLine("Boy");
                 }
             }     
         }
@@ -161,12 +190,7 @@ public partial class Quiz : System.Web.UI.Page
         }
            
     } 
-
-
-
-        
-    
-        
+  
 }
 
 

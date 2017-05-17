@@ -29,7 +29,7 @@
                      <br />
                     <br />
                 </form>
-               
+
 
                 <form>
                     <asp:Label ID="question2" runat="server" Text="Label"></asp:Label> <br />
@@ -71,11 +71,61 @@
                     <br />
                 </form>
 
-                
+                <form>
+                    <asp:Label ID="question6" runat="server" Text="Label"></asp:Label> <br />
+                    <asp:RadioButton ID="Q6RD1" value ="0" runat="server" /><asp:Label ID="q6a" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q6RD2" value ="0" runat="server" /><asp:Label ID="q6b" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q6RD3" value ="0" runat="server" /><asp:Label ID="q6c" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q6RD4" value ="0" runat="server" /><asp:Label ID="q6d" runat="server" Text="Label"></asp:Label><br />
+                    <br />
+                    <br />
+                </form>
 
-              
+                <form>
+                    <asp:Label ID="question7" runat="server" Text="Label"></asp:Label> <br />
+                    <asp:RadioButton ID="Q7RD1" value ="0" runat="server" /><asp:Label ID="q7a" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q7RD2" value ="0" runat="server" /><asp:Label ID="q7b" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q7RD3" value ="0" runat="server" /><asp:Label ID="q7c" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q7RD4" value ="0" runat="server" /><asp:Label ID="q7d" runat="server" Text="Label"></asp:Label><br />
+                    <br />
+                    <br />
+                </form>
 
-         
+                <form>
+                    <asp:Label ID="question8" runat="server" Text="Label"></asp:Label> <br />
+                    <asp:RadioButton ID="Q8RD1" value ="0" runat="server" /><asp:Label ID="q8a" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q8RD2" value ="0" runat="server" /><asp:Label ID="q8b" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q8RD3" value ="0" runat="server" /><asp:Label ID="q8c" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q8RD4" value ="0" runat="server" /><asp:Label ID="q8d" runat="server" Text="Label"></asp:Label><br />
+                    <br />
+                    <br />
+                </form>
+
+                <form>
+                    <asp:Label ID="question9" runat="server" Text="Label"></asp:Label> <br />
+                    <asp:RadioButton ID="Q9RD1" value ="0" runat="server" /><asp:Label ID="q9a" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q9RD2" value ="0" runat="server" /><asp:Label ID="q9b" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q9RD3" value ="0" runat="server" /><asp:Label ID="q9c" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q9RD4" value ="0" runat="server" /><asp:Label ID="q9d" runat="server" Text="Label"></asp:Label><br />
+                    <br />
+                    <br />
+                </form>
+
+                <form>
+                    <asp:Label ID="question10" runat="server" Text="Label"></asp:Label> <br />
+                    <asp:RadioButton ID="Q10RD1" value ="0" runat="server" /><asp:Label ID="q10a" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q10RD2" value ="0" runat="server" /><asp:Label ID="q10b" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q10RD3" value ="0" runat="server" /><asp:Label ID="q10c" runat="server" Text="Label"></asp:Label><br />
+                    <asp:RadioButton ID="Q10RD4" value ="0" runat="server" /><asp:Label ID="q10d" runat="server" Text="Label"></asp:Label><br />
+                    <br />
+                    <br />
+                </form>
+
+
+
+
+
+
 
 
             </div>

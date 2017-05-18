@@ -7,7 +7,7 @@
 
 <head runat="server">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/teacherBootstrap.css" rel="stylesheet" />
 
     <title>Change Password</title>
 

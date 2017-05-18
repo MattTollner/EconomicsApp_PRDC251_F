@@ -10,7 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Competitive Market</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/teacherBootstrap.css" rel="stylesheet"/>
 
 </head>
 

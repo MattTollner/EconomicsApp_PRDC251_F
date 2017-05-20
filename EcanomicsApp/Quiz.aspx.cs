@@ -18,9 +18,10 @@ public partial class Quiz : System.Web.UI.Page
     private List<ListItem> questionsList;
     string userID;
     //private List<int> questionIdList = new List<int>();
-    private int[] questionIdArray = new int[20];
+    static int[] questionIdArray = new int[20];
     private string[] answerArray;
     static Random _random = new Random();
+    int attemptID;
 
     DataTable dt1 = new DataTable();
     DataTable dt2 = new DataTable();
@@ -30,12 +31,13 @@ public partial class Quiz : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Random 10 digits
-        // userID =  Session["USERID"].ToString();
-        // SubmitQuiz(21);
-        getRandomQuestions();
-        populateQuestions();
-
+        if (!IsPostBack)
+        {
+            getRandomQuestions();
+            populateQuestions();
+            SubmitQuiz(20);
+            //SubmitQuiz(Int32.Parse(Session["USERID"].ToString()));
+        }
     }
 
 
@@ -53,109 +55,89 @@ public partial class Quiz : System.Web.UI.Page
     //Method to insert the quesiton data
     private void populateQuestions()
     {
-
-        using (SqlConnection con = new SqlConnection(CS))
+        if (!IsPostBack)
         {
-            
-
-            //Counter for 10 quetions 
-            for (int i = 1; i < 11; i++)
+            using (SqlConnection con = new SqlConnection(CS))
             {
-                //Questions
-                cmd = new SqlCommand("select Question from Questions WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
-                sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt1);
-                //Dummy Answers
-                cmd = new SqlCommand("select * from Dummy WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
-                sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt2);
-                //Answers
-                cmd = new SqlCommand("select Answer from Answers WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
-                sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt3);
 
 
-
-                if (dt1.Rows.Count != 0 && dt2.Rows.Count != 0 && dt3.Rows.Count != 0)
+                //Counter for 10 quetions
+                for (int i = 1; i < 11; i++)
                 {
-                    //Populate questions
-                    char tChar = 'a';
+                    //Questions
+                    cmd = new SqlCommand("select Question from Questions WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt1);
+                    //Dummy Answers
+                    cmd = new SqlCommand("select * from Dummy WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt2);
+                    //Answers
+                    cmd = new SqlCommand("select Answer from Answers WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt3);
 
-                    //Create dummy/answer array    
 
-                    questionDummyArray = new string[] {
+
+                    if (dt1.Rows.Count != 0 && dt2.Rows.Count != 0 && dt3.Rows.Count != 0)
+                    {
+
+                        //Create dummy/answer array
+
+                        questionDummyArray = new string[] {
                         dt2.Rows[0]["Dummy_Answer"].ToString(),
                         dt2.Rows[1]["Dummy_Answer"].ToString(),
                         dt2.Rows[2]["Dummy_Answer"].ToString(),
                         dt3.Rows[0]["Answer"].ToString()
                      };
-                    //Shuffle array
-                    Shuffle(questionDummyArray);
+                        //Shuffle array
+                        Shuffle(questionDummyArray);
 
-                    int count = dt1.Rows.Count;
+                        int count = dt1.Rows.Count;
 
-                    //Populate question label
-                    Label qLbl = Page.FindControl("question" + i) as Label;
+                        //Populate question label
+                        Label qLbl = Page.FindControl("question" + i) as Label;
 
-                    int count2 = i;
-
-
-
-                    qLbl.Text = dt1.Rows[i - 1]["Question"].ToString();
+                        int count2 = i;
 
 
-                    //Add answer
-                    //int ansLoc = _random.Next(0, 3);
-                    //char ansChar = tChar;
-                    //ansChar += (char)ansLoc;
-                    //string temp2 = "q" + i + (ansChar);                    
-                    //Label tLbl = Page.FindControl(temp2) as Label;
-                    //tLbl.Text = dt3.Rows[0]["Answer"].ToString();
+
+                        qLbl.Text = dt1.Rows[i - 1]["Question"].ToString();
 
 
-                    string temp = "RadioButtonList" + i;
-                    RadioButtonList rdBtList = Page.FindControl(temp) as RadioButtonList;
-
-                    //Fill dummy answers
-                    for (int f = 0; f < 4; f++)
-                    {
-                        rdBtList.Items.Add(new ListItem(questionDummyArray[f], "0"));
-                        dt2.Clear();
-                        dt3.Clear();
+                        //Add answer
+                        //int ansLoc = _random.Next(0, 3);
+                        //char ansChar = tChar;
+                        //ansChar += (char)ansLoc;
+                        //string temp2 = "q" + i + (ansChar);
+                        //Label tLbl = Page.FindControl(temp2) as Label;
+                        //tLbl.Text = dt3.Rows[0]["Answer"].ToString();
 
 
-                        //string temp = "q" + i + tChar;
-                        //tLbl = Page.FindControl(temp) as Label;
-                        //if(tLbl.Text == "Label")
-                        //{
-                        //    //Blank text filed
-                        //    tLbl.Text = questionDummyArray[f - 1];
-                        //    tChar++;
-                        //    dt2.Clear();
-                        //    dt3.Clear();
-                        //}
-                        //else
-                        //{
-                        //    //Answer already inserted, skip
-                        //    tChar++;
-                        //    temp = "q" + i + (tChar);
-                        //    tLbl = Page.FindControl(temp) as Label;
-                        //    tLbl.Text = questionDummyArray[f - 1];
-                        //    //Skip forward two                          
-                        //    tChar++;
-                        //    dt2.Clear();
-                        //    dt3.Clear();
+                        string temp = "RadioButtonList" + i;
+                        RadioButtonList rdBtList = Page.FindControl(temp) as RadioButtonList;
 
-                        //}
+                        //Fill dummy answers
+                        for (int f = 0; f < 4; f++)
+                        {
+                            if (!this.IsPostBack)
+                            {
+                                rdBtList.Items.Add(new ListItem(questionDummyArray[f]));
+                                dt2.Clear();
+                                dt3.Clear();
+                            }
 
+                        }
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Boy");
+                    else
+                    {
+                        Console.WriteLine("Boy");
+                    }
                 }
             }
         }
+
+
     }
 
     static void Shuffle<T>(T[] array)
@@ -172,13 +154,13 @@ public partial class Quiz : System.Web.UI.Page
         }
     }
 
-    static void SubmitQuiz(int theID)
+    private void SubmitQuiz(int theID)
     {
         String CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
 
         using (SqlConnection con = new SqlConnection(CS))
         {
-            string sqlIns = "INSERT INTO Quiz_Attempt (Quiz_ID, Student_ID, Result) VALUES (@qID, @sID, @rslt)";
+            string sqlIns = "INSERT INTO Quiz_Attempt (Quiz_ID, Student_ID, Result) VALUES (@qID, @sID, @rslt) SELECT SCOPE_IDENTITY()";
 
 
             SqlCommand cmd = new SqlCommand(sqlIns, con);
@@ -189,7 +171,10 @@ public partial class Quiz : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@qID", 1);
                 cmd.Parameters.AddWithValue("@sID", theID);
                 cmd.Parameters.AddWithValue("@rslt", 1);
-                cmd.ExecuteNonQuery();
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                attemptID = Int32.Parse(reader[0].ToString());
+                Session["ATTEMPTID"] = Int32.Parse(reader[0].ToString());
 
             }
             catch (SqlException ex)
@@ -203,57 +188,73 @@ public partial class Quiz : System.Web.UI.Page
             {
 
             }
+
+
         }
 
     }
 
+    private void BindList()
+    {
+        DataSet ds = new DataSet();
+        string cmdstr = "SELECT Questions.Question, Dummy.Dummy_Answer, Answers.Answer FROM ((Questions INNER JOIN Dummy on Questions.Question_ID = Dummy.Question_ID) INNER JOIN Answers ON Questions.Question_ID = Answers.Question_ID);";
+        SqlDataAdapter adp = new SqlDataAdapter(cmdstr, CS);
+        adp.Fill(ds);
+        RadioButtonList11.DataSource = ds;
+        RadioButtonList11.DataTextField = "Dummy_Answer";
+        RadioButtonList11.DataValueField = "Question";
+        RadioButtonList11.DataBind();
+    }
+
+
+
     void CalculateScore()
     {
         dt1.Rows.Clear();
-        for (int i = 1; i < 11; i++)
-        {
-            string temp = "RadioButtonList" + i;
-            RadioButtonList rdBtList = Page.FindControl(temp) as RadioButtonList;
-            string userAnswer = rdBtList.SelectedItem.Text;
 
+        for (int g = 1; g < 11; g++)
+        {
             using (SqlConnection con = new SqlConnection(CS))
             {
-                for (int g = 1; i < 11; g++)
-                {
+                
                     //Questions
-                    cmd = new SqlCommand("select Answer from Answers WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
+                    dt1.Rows.Clear();
+                    int qID = questionIdArray[g - 1];
+                    cmd = new SqlCommand("select Answer from Answers WHERE Question_ID = '" + qID + "'", con);
                     sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt1);
 
-                    string temp3 = "RadioButtonList" + i;
+                    string temp3 = "RadioButtonList" + g;
                     RadioButtonList rdBtList2 = Page.FindControl(temp3) as RadioButtonList;
 
-                    
-                    if(dt1.Rows.Count != 0)
+
+                    if (dt1.Rows.Count != 0)
                     {
                         string uAnser = rdBtList2.SelectedItem.Text;
+                        int rows = dt1.Rows.Count;
                         string answser = dt1.Rows[0]["Answer"].ToString();
-
-                        if(uAnser == answser)
+                        string sqlIns = "INSERT INTO Question_Attempt (Quiz_Attempt_ID, Question_ID, Answer, Is_Correct) VALUES (@qaID, @qID, @ans, @correct)";
+                        cmd = new SqlCommand(sqlIns, con);
+                    int tempInt = Int16.Parse(Session["ATTEMPTID"].ToString());
+                    if (uAnser == answser)
                         {
                             //Correct
-                            string sqlIns = "INSERT INTO Quiz_Attempt (Quiz_ID, Student_ID, Result) VALUES (@qID, @sID, @rslt)";
-
-
-                            SqlCommand cmd = new SqlCommand(sqlIns, con);
 
                             try
                             {
-                                con.Open();
-                                cmd.Parameters.AddWithValue("@qID", 1);
-                                cmd.Parameters.AddWithValue("@sID", theID);
-                                cmd.Parameters.AddWithValue("@rslt", 1);
+                            
+                                con.Open();                                
+                                cmd.Parameters.AddWithValue("@qaID", tempInt);
+                                cmd.Parameters.AddWithValue("@qID", questionIdArray[g - 1]);
+                                cmd.Parameters.AddWithValue("@ans", uAnser);
+                                cmd.Parameters.AddWithValue("@correct", 1);
                                 cmd.ExecuteNonQuery();
+                            
 
                             }
                             catch (SqlException ex)
                             {
-                                for (int i = 0; i < ex.Errors.Count; i++)
+                                for (int e = 0; e < ex.Errors.Count; e++)
                                 {
                                     string error = ex.Errors[0].ToString();
                                 }
@@ -264,27 +265,61 @@ public partial class Quiz : System.Web.UI.Page
                             }
 
                         }
+                        else
+                        {
+                            //INCOrrect
+                            try
+                            {
+                          
+                                con.Open();
+                                cmd.Parameters.AddWithValue("@qaID", tempInt);
+                                cmd.Parameters.AddWithValue("@qID", questionIdArray[g - 1]);
+                                cmd.Parameters.AddWithValue("@ans", uAnser);
+                                cmd.Parameters.AddWithValue("@correct", 0);
+                                cmd.ExecuteNonQuery();
+                                
+
+
+                        }
+                            catch (SqlException ex)
+                            {
+                                for (int e = 0; e < ex.Errors.Count; e++)
+                                {
+                                    string error = ex.Errors[0].ToString();
+                                }
+                            }
+                            catch (Exception exs)
+                            {
+                                string h = exs.ToString();
+                            }
+                        }
 
                     }
                     else
                     {
                         Console.WriteLine("Shit mate");
-                    }                   
-                    
+                    }
+
                 }
 
-            }
-        }
+            }       
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {        
+        CalculateScore();
+    }
+
+    
 }
 
 
 
 
 
-  
 
 
- 
-  
+
+
+

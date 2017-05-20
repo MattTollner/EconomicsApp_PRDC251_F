@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Quiz</a></li>
+        <li><a href="SelectQuiz.aspx">Quiz</a></li>
         <li><a href="#">Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
@@ -71,9 +71,9 @@
 	
 	<a href="RevisionMaterial.aspx" class="btn btn-default btn-lg">Revision Material <span class="glyphicon glyphicon-book"></span></a><br />
 	
-	<a href="#" class="btn btn-default btn-lg">Quiz <span class="glyphicon glyphicon-align-justify"></span></a><br />
+	<a href="SelectQuiz.aspx" class="btn btn-default btn-lg">Quiz <span class="glyphicon glyphicon-align-justify"></span></a><br />
 	
-	<a href="#" class="btn btn-default btn-lg">Quiz Archive <span class="glyphicon glyphicon-inbox"></span></a><br />
+	<a href="SelectQuizArchive.aspx" class="btn btn-default btn-lg">Quiz Archive <span class="glyphicon glyphicon-inbox"></span></a><br />
 	
 	<a href="Glossary.aspx" class="btn btn-default btn-lg">Glossary <span class="glyphicon glyphicon-th-list"></span></a><br />
 	

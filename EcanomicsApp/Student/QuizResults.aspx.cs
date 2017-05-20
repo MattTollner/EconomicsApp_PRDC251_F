@@ -23,8 +23,7 @@ public partial class QuizResults : System.Web.UI.Page
         getQuestionIDs();
         getRealAnswers();
         getQuestions();
-        populateResults();
-        
+        populateResults();       
 
     }
 

@@ -8736,15 +8736,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marcus\\.nuget\\packages\\": {}
+    "C:\\Users\\Matt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marcus\\Source\\Repos\\EconomicsApp_PRDC251_F3\\EconomicsWebApplication\\EconomicsWebApplication\\EconomicsWebApplication.csproj",
+      "projectUniqueName": "C:\\Users\\Matt\\Source\\Repos\\EconomicsApp_PRDC251_F3\\EconomicsWebApplication\\EconomicsWebApplication\\EconomicsWebApplication.csproj",
       "projectName": "EconomicsWebApplication",
-      "projectPath": "C:\\Users\\marcus\\Source\\Repos\\EconomicsApp_PRDC251_F3\\EconomicsWebApplication\\EconomicsWebApplication\\EconomicsWebApplication.csproj",
-      "outputPath": "C:\\Users\\marcus\\Source\\Repos\\EconomicsApp_PRDC251_F3\\EconomicsWebApplication\\EconomicsWebApplication\\obj\\",
+      "projectPath": "C:\\Users\\Matt\\Source\\Repos\\EconomicsApp_PRDC251_F3\\EconomicsWebApplication\\EconomicsWebApplication\\EconomicsWebApplication.csproj",
+      "outputPath": "C:\\Users\\Matt\\Source\\Repos\\EconomicsApp_PRDC251_F3\\EconomicsWebApplication\\EconomicsWebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

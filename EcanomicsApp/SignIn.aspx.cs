@@ -237,29 +237,8 @@ public partial class SignIn : System.Web.UI.Page
                     Session["USERTYPE"] = "TEACHER";
                     Session["USERID"] = dt.Rows[0]["Teacher_ID"].ToString();
                     Response.Redirect("~/Teacher/TeacherHome.aspx");
-                }
-
-           
-
-                //string uType;
-                //uType = dt.Rows[0][5].ToString().Trim();
-
-                //switch (uType)
-                //{
-                //    case "U":
-                //        Session["USERNAME"] = UserName.Text;
-                //        Response.Redirect("~/Userhome.aspx");
-                //        break;
-                //    case "A":
-                //        Session["USERNAME"] = UserName.Text;
-                //        Response.Redirect("~/Adminhome.aspx");
-                //        break;
-                //    default:
-                //        break;
-                //}
-
-
-
+                }         
+                
 
             }
             else

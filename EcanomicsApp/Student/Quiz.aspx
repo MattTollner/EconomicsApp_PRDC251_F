@@ -10,22 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Custom-Cs.css" rel="stylesheet" />
 
-    <title>Quiz</title>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-
-            $("input:radio").click(function () {
-                $("input:radio").each(function () {
-                    $(this).attr("checked", "")
-                });
-                $(this).attr("checked", "checked");
-            });
-
-
-        });
-    </script>
+    <title>Quiz</title>    
 
 
 </head>

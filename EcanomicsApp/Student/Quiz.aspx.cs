@@ -28,9 +28,21 @@ public partial class Quiz : System.Web.UI.Page
     DataTable dt3 = new DataTable();
     SqlCommand cmd;
     SqlDataAdapter sda;
+    DateTime dateTaken;
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        dateTaken = DateTime.Today.Date;
+      //  string id = Session["USERID"].ToString();
+        if (Session["USERID"] == null)
+        {
+            Response.Redirect("~/SignIn.aspx");
+        }
+        else
+        {
+            string s = Session["USERID"].ToString();
+        }
+
         if (!IsPostBack)
         {
             getRandomQuestions();
@@ -65,7 +77,7 @@ public partial class Quiz : System.Web.UI.Page
                 for (int i = 1; i < 11; i++)
                 {
                     //Questions
-                    cmd = new SqlCommand("select Question from Questions WHERE Question_ID = '" + questionIdArray[i - 1] + "'", con);
+                    cmd = new SqlCommand("select Question from Questions WHERE Question_ID = '" + questionIdArray[i - 1] + "' AND Quiz_ID = '" + Session["QUIZ"].ToString() + "'", con);
                     sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt1);
                     //Dummy Answers
@@ -160,7 +172,7 @@ public partial class Quiz : System.Web.UI.Page
 
         using (SqlConnection con = new SqlConnection(CS))
         {
-            string sqlIns = "INSERT INTO Quiz_Attempt (Quiz_ID, Student_ID, Result) VALUES (@qID, @sID, @rslt) SELECT SCOPE_IDENTITY()";
+            string sqlIns = "INSERT INTO Quiz_Attempt (Quiz_ID, Student_ID, Result,Date) VALUES (@qID, @sID, @rslt, @date) SELECT SCOPE_IDENTITY()";
 
 
             SqlCommand cmd = new SqlCommand(sqlIns, con);
@@ -171,6 +183,7 @@ public partial class Quiz : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@qID", 1);
                 cmd.Parameters.AddWithValue("@sID", theID);
                 cmd.Parameters.AddWithValue("@rslt", 1);
+                cmd.Parameters.AddWithValue("@date", dateTaken);
                 SqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();
                 attemptID = Int32.Parse(reader[0].ToString());
@@ -241,15 +254,13 @@ public partial class Quiz : System.Web.UI.Page
                             //Correct
 
                             try
-                            {
-                            
+                            {                            
                                 con.Open();                                
                                 cmd.Parameters.AddWithValue("@qaID", tempInt);
                                 cmd.Parameters.AddWithValue("@qID", questionIdArray[g - 1]);
                                 cmd.Parameters.AddWithValue("@ans", uAnser);
                                 cmd.Parameters.AddWithValue("@correct", 1);
-                                cmd.ExecuteNonQuery();
-                            
+                                cmd.ExecuteNonQuery();                            
 
                             }
                             catch (SqlException ex)

@@ -10,7 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>A2 Macro Economics Revision Material</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/teacherBootstrap.css" rel="stylesheet"/>
 </head>
 <body style="background-color:#2B3A42">
     <form id="form1" runat="server">

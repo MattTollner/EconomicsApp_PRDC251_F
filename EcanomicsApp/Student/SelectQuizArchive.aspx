@@ -12,7 +12,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="ccs/bootstrap.css" rel="stylesheet"/>
 </head>
-<body>
+<body style="background-color: #2B3A42">
     <form id="form1" runat="server">
           <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">

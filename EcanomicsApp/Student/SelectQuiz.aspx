@@ -14,7 +14,7 @@
     <link href="css/bootstrap.css" rel="stylesheet"/>
 
 </head>
-<body>
+<body style="background-color: #2B3A42">
     <form id="form1" runat="server">
 
         <!--Start of navbar-->

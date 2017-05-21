@@ -14,7 +14,9 @@ public partial class Teacher_ViewStudentTests : System.Web.UI.Page
 
     protected void btnLogOut_Click(object sender, EventArgs e)
     {
-
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

@@ -78,7 +78,9 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-    
+        
+        <asp:Label ID="lblError" runat="server"  CssClass="btn bnt-default navbar-btn"></asp:Label>
+
     </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuizAttemptConnectionString %>" SelectCommand="SELECT Class_List.Class_ID, Student.Student_ID, Student.Username, Student.FirstName, Student.LastName, Student.Email FROM Class_List INNER JOIN Student ON Class_List.Student_ID = Student.Student_ID WHERE (Class_List.Class_ID = @Quiz_ID)">
             <SelectParameters>

@@ -35,6 +35,7 @@
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
         <li><a href="SelectQuiz.aspx">Quiz</a></li>
         <li><a href="SelectQuizArchive.aspx">Quiz Archive</a></li>
+        <li><a href="JoinClass.aspx">Join Class</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>
@@ -58,12 +59,12 @@
 
 
 	
-	<div class="container">
+<%--	<div class="container">
     <div class="page-header">
 	<h1>Economics App</h1>
 	</div>
 	<div class="jumbotron">
-	<div class ="row">
+	<div class ="row">--%>
 	
 	
 	<center>
@@ -75,6 +76,8 @@
 	
 	<a href="SelectQuizArchive.aspx" class="btn btn-default btn-lg">Quiz Archive <span class="glyphicon glyphicon-inbox"></span></a><br />
 	
+    <a href="JoinClass.aspx" class="btn btn-default btn-lg">Join Class <span class="glyphicon glyphicon-comment"></span></a><br/>
+
 	<a href="Glossary.aspx" class="btn btn-default btn-lg">Glossary <span class="glyphicon glyphicon-th-list"></span></a><br />
 	
 	<a href="NewsOutlet.aspx" class="btn btn-default btn-lg">News Outlets <span class="glyphicon glyphicon-text-background"></span></a><br />

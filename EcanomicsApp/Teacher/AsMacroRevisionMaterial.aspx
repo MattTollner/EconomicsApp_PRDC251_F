@@ -13,7 +13,7 @@
 	
 
   </head>
-  <body style="background-color:#2B3A42">
+  <body style="background-color:#413D49">
 	<form id="form1" runat="server">
 		 <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">

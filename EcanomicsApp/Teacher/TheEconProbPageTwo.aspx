@@ -13,7 +13,7 @@
 	
 
   </head>
-  <body style="background-color:#2B3A42">
+  <body style="background-color:#413D49">
 	<div class="container">
 	
 	<nav class="navbar navbar-fixed-default">

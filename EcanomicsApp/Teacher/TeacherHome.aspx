@@ -32,8 +32,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Quiz Archive</a></li>
+        <li><a href="ViewClasses.aspx">Student Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>
@@ -70,7 +69,7 @@
 	
 	<a href="RevisionMaterial.aspx" class="btn btn-default btn-lg">Revision Material <span class="glyphicon glyphicon-book"></span></a><br />
 	
-	<a href="#" class="btn btn-default btn-lg">Student Quiz Archive <span class="glyphicon glyphicon-inbox"></span></a><br />
+	<a href="ViewClasses.aspx" class="btn btn-default btn-lg">Student Quiz Archive <span class="glyphicon glyphicon-inbox"></span></a><br />
 	
 	<a href="Glossary.aspx" class="btn btn-default btn-lg">Glossary <span class="glyphicon glyphicon-th-list"></span></a><br />
 	
@@ -84,7 +83,7 @@
 
     </div>
         </div>
-        
+        </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

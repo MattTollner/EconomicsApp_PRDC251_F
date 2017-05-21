@@ -38,8 +38,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Quiz Archive</a></li>
+        <li><a href="ViewClasses.aspx">Student Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>
@@ -49,7 +48,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Edit Account</a></li>
+            <li><a href="UpdateTeacherInformation.aspx">Edit Account</a></li>
             <li role="separator" class="divider"></li>
             <li><asp:Button ID="btnLogOut" CssClass="btn bnt-default" runat="server" Text="Log Out" OnClick="btnLogOut_Click"></asp:Button></li>
           </ul>

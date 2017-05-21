@@ -4,12 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/teacherBootstrap.css" rel="stylesheet" />
     <title></title>
 </head>
-<body>
+<body style="background-color:#413D49">
     <form id="form1" runat="server">
         <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -28,8 +31,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Quiz Archive</a></li>
+        <li><a href="ViewClasses.aspx">Student Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>

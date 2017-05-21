@@ -34,8 +34,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Quiz Archive</a></li>
+        <li><a href="ViewClasses.aspx">Student Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>

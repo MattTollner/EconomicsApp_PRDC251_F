@@ -4,10 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <title></title>
+    
+
+    <title>View Student Tests</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/teacherBootstrap.css" rel="stylesheet" />
+
     <style type="text/css">
 
 
@@ -27,7 +34,7 @@
   }
   *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}</style>
 </head>
-<body>
+<body style="background-color:#413D49">
     <form id="form1" runat="server">
      <!--Start of navbar-->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -46,8 +53,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-                        <li><a href="SelectQuiz.aspx">Quiz</a></li>
-                        <li><a href="SelectQuizArchive.aspx">Quiz Archive</a></li>
+                        <li><a href="ViewClasses.aspx">Student Quiz Archive</a></li>
                         <li><a href="Glossary.aspx">Glossary</a></li>
                         <li><a href="NewsOutlet.aspx">News Outlets</a></li>
                     </ul>
@@ -71,6 +77,11 @@
         </nav>
         <br />
         <!-- end of navbar-->
+
+            <div class="container">
+        <div class="page-header">
+	        <h1>View Student Tests</h1>
+	     </div>
 
         <div class="jumbotron">
             <div class="cener-page">
@@ -107,11 +118,17 @@
                 <asp:SessionParameter DefaultValue="20" Name="Student_ID" SessionField="USERID" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
-    </form>
+    
+
+
+
+    </div>
 
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+
+    </form>
 </body>
 </html>

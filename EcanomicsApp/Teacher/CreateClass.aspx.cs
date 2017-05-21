@@ -60,4 +60,11 @@ public partial class Teacher_CreateClass : System.Web.UI.Page
 
         }
     }
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
 }

@@ -12,7 +12,7 @@
     <title>Change Password</title>
 
 
-</head> style="background-color:#2B3A42"
+</head> style="background-color:#413D49"
 <body>
 <form id="form1" runat="server">
 

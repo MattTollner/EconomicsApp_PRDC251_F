@@ -1,15 +1,15 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NewsOutlet.aspx.cs" Inherits="NewsOutlet" %>
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Economics App</title>
 	
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet"/>
 	
 
   </head>
@@ -33,8 +33,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Quiz Archive</a></li>
+        <li><a href="SelectQuiz.aspx">Quiz</a></li>
+        <li><a href="SelectQuizArchive.aspx">Quiz Archive</a></li>
 		<li><a href="Glossary.aspx">Glossary</a></li>
 		<li><a href="NewsOutlet.aspx">News Outlets</a></li>
 	  </ul>
@@ -52,7 +52,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav></br>
+</nav><br/>
 <!-- end of navbar-->
 
     <div class="container">

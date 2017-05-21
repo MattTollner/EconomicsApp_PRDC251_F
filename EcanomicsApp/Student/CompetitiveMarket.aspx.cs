@@ -18,4 +18,5 @@ public partial class CompetitiveMarket : System.Web.UI.Page
         Session["USERNAME"] = null;
         Response.Redirect("~/Default.aspx");
     }
+
 }

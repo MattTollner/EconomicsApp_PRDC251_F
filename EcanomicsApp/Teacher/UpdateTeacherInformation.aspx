@@ -17,7 +17,7 @@
 
 
 </head>
-<body>
+<body style="background-color:#413D49">
     <form id="form1" runat="server">
     	 <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">

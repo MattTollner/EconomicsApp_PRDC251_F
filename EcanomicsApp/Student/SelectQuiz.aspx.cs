@@ -12,6 +12,13 @@ public partial class SelectQuiz : System.Web.UI.Page
 
     }
 
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
+
     protected void aLevelQuiz_Click(object sender, EventArgs e)
     {
         Session["QUIZ"] = 2;

@@ -13,7 +13,7 @@
 	
 
   </head>
-  <body style="background-color:#2B3A42">
+  <body style="background-color:#413D49">
 	    <form id="form1" runat="server">
 
 	<!--Start of navbar-->
@@ -69,8 +69,8 @@
 	<div class="btn-group-vertical">
 	
 		<div class="row">
-			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-xs">Section One - The Economic Problem</a>
-			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
+			<a href="TheEconProbPageOne.aspx" class="btn btn-default btn-lg hidden-xs">Section One - The Economic Problem</a>
+			<a href="TheEconProbPageOne.aspx" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
 	
 			<!--modal button 1-->
 			<a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal1"></a>

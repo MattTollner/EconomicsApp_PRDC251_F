@@ -12,7 +12,7 @@
 
     <link href="css/teacherBootstrap.css" rel="stylesheet"/>
 </head>
-<body style="background-color:#2B3A42">
+<body style="background-color:#413D49">
     <form id="form1" runat="server">
     
         
@@ -68,8 +68,8 @@
 	
 			<div class="row">
 			
-			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-xs">Section One - Business Economics</a>
-			<a href="TheEconProbPageOne.html" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
+			<a href="#" class="btn btn-default btn-lg hidden-xs">Section One - Business Economics</a>
+			<a href="#" class="btn btn-default btn-lg hidden-md hidden-lg hidden-sm">Section One</a>
 	
 	
 			<!--modal button 1-->

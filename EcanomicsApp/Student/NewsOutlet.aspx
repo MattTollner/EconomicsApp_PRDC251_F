@@ -68,15 +68,15 @@
 	<center>
 	
 	
-	<a href="http://www.bbc.co.uk/news/business/economy" target="_blank"><img class="img-responsive" src="images/bbcnews.png" style="width:375px;height:210px;"></a><br/>
+	<a href="http://www.bbc.co.uk/news/business/economy" target="_blank"><img class="img-responsive" src="images/bbcnews.png" style="width:290px;height:170px;"></a><br/>
 	
-	<a href="http://www.economist.com/" target="_blank"><img class="img-responsive" src="images/economist.png" style="width:375px;height:210px;"></a><br/>
+	<a href="http://www.economist.com/" target="_blank"><img class="img-responsive" src="images/economist.png" style="width:290px;height:170px;"></a><br/>
 	
-	<a href="https://www.ft.com/?edition=uk"  target="_blank"><img class="img-responsive" src="images/financialtimes.png" style="width:375px;"></a><br/>
+	<a href="https://www.ft.com/?edition=uk"  target="_blank"><img class="img-responsive" src="images/financialtimes.png" style="width:300px;"></a><br/>
 	
-	<a href="https://www.theguardian.com/business/economics" target="_blank"><img class="img-responsive" src="images/guardian.png" style="width:375px;"></a><br/>
+	<a href="https://www.theguardian.com/business/economics" target="_blank"><img class="img-responsive" src="images/guardian.png" style="width:300px;"></a><br/>
 	
-	<a href="https://www.tutor2u.net/economics"  target="_blank"><img class="img-responsive" src="images/tutor2u.png" style="width:340px;height:210px;"></a><br/>
+	<a href="https://www.tutor2u.net/economics"  target="_blank"><img class="img-responsive" src="images/tutor2u.png" style="width:290px;height:170px;"></a><br/>
 	
 	</center>
 	</div>

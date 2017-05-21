@@ -20,6 +20,7 @@
 <body style="background-color:#2B3A42">
     <form id="form1" runat="server">
 
+
         <!--Start of navbar-->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -60,6 +61,12 @@
 </nav><br/>
 <!-- end of navbar-->
 
+        	<div class="container">
+    <div class="page-header">
+	<h1> Quiz</h1>
+	</div>
+	<div class="jumbotron">
+	<div class ="row">
 
         <div id="questionDiv">
 
@@ -168,7 +175,9 @@
             <asp:Label ID="lblError" runat="server"  CssClass="btn bnt-default navbar-btn"></asp:Label>
         </div>
 
-
+        </div>
+        </div>
+                </div>
     </form>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

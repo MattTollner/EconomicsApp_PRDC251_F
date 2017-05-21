@@ -59,12 +59,12 @@
 
 
 	
-	<div class="container">
+<%--	<div class="container">
     <div class="page-header">
 	<h1>Economics App</h1>
 	</div>
 	<div class="jumbotron">
-	<div class ="row">
+	<div class ="row">--%>
 	
 	
 	<center>

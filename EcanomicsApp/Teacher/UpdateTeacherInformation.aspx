@@ -94,7 +94,7 @@
             </div>        
 
             <div>
-                <a class="btn btn-large btn-info" href="ChangePassword.aspx">Change Passowrd</a>
+                <a class="btn btn-large btn-info" href="ChangeTeacherPassword.aspx">Change Passowrd</a>
             </div>
 
             <asp:Label ID="lblMsg" class="col-xs-11" runat="server"><!--HELLLJFDL:KJDL:FSKJL:KSDJFL:KJSDL:FJ:LKF--></asp:Label>

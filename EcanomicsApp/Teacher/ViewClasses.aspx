@@ -53,7 +53,12 @@
 <br/>
 <!-- end of navbar-->
 
-    <div>
+            <div class="container">
+        <div class="page-header">
+	        <h1>View Classes</h1>
+	     </div>
+    <div class="jumbotron">
+	    <center>
     
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
@@ -73,7 +78,9 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-    
+    </center>
+
+    </div>
     </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XserveConnectionString %>" SelectCommand="SELECT [Class_Name], [Class_ID] FROM [Class] WHERE ([Teacher_ID] = @Teacher_ID)">
             <SelectParameters>

@@ -15,8 +15,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/teacherBootstrap.css" rel="stylesheet" />
 
-    <style type="text/css">
-
+    <!--<style type="text/css"> css is breaking the style sheets css will fix later.
+        
 
 * {
   -webkit-box-sizing: border-box;
@@ -32,7 +32,11 @@
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
   }
-  *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}</style>
+  *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*,
+    :after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;
+                   -webkit-box-shadow:none!important;box-shadow:none!important}
+
+    </style>-->
 </head>
 <body style="background-color:#413D49">
     <form id="form1" runat="server">
@@ -47,7 +51,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="Home.aspx">Economics App</a>
+                    <a class="navbar-brand" href="TeacherHome.aspx">Economics App</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -84,7 +88,7 @@
 	     </div>
 
         <div class="jumbotron">
-            <div class="cener-page">
+            <div class="center-page">
                 <br />
                 <br />
 

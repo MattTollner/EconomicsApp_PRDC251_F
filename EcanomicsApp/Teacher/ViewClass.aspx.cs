@@ -69,4 +69,11 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
         Session["USERID"] = studentID;
         Response.Redirect("~/Teacher/ViewStudentTests.aspx");
     }
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
 }

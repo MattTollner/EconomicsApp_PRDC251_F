@@ -1,35 +1,34 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="QuizArchive.aspx.cs" Inherits="Student_QuizArchive" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ViewStudentTests.aspx.cs" Inherits="Teacher_ViewStudentTests" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+    <style type="text/css">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
-        rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>
-    <script type="text/javascript">
-    $(function () {
-        $('[id*=GridView1]').footable();
-    });
-    </script>
-
-    <title>Quiz Archive</title>
-
-
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+  *,
+  *:before,
+  *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}</style>
 </head>
-<body style="background-color: #2B3A42">
+<body>
     <form id="form1" runat="server">
-
-        <!--Start of navbar-->
+     <!--Start of navbar-->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -77,14 +76,14 @@
                 <br />
                 <br />
 
-                <div class="col-xs-11">
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover" CellPadding="4" DataKeyNames="Quiz_Attempt_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <div class="col-xs-">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="table table-hover table-striped" CellPadding="4" DataKeyNames="Quiz_Attempt_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowSorting="True">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="Quiz_Attempt_ID" HeaderText="Quiz_Attempt_ID" InsertVisible="False" ReadOnly="True" SortExpression="Quiz_Attempt_ID" />
-                            <asp:BoundField DataField="Quiz_ID" HeaderText="Quiz_ID" SortExpression="Quiz_ID" />
-                            <asp:BoundField DataField="Student_ID" HeaderText="Student_ID" SortExpression="Student_ID" />
+                            <asp:BoundField DataField="Quiz_Attempt_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Quiz_Attempt_ID" />
+                            <asp:BoundField DataField="Quiz_ID" HeaderText="Quiz Year" SortExpression="Quiz_ID" />
+                            <asp:BoundField DataField="Student_ID" HeaderText="Student_ID" SortExpression="Student_ID" Visible="False" />
                             <asp:BoundField DataField="Result" HeaderText="Result" SortExpression="Result" />
                             <asp:BoundField DataField="Date" DataFormatString="{0:d}" HeaderText="Date" SortExpression="Date" />
                         </Columns>
@@ -102,11 +101,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuizAttemptConnectionString %>" SelectCommand="SELECT * FROM [Quiz_Attempt] WHERE ([Student_ID] = @Student_ID)">
             <SelectParameters>
                 <asp:SessionParameter DefaultValue="20" Name="Student_ID" SessionField="USERID" Type="Int32" />
@@ -114,5 +108,9 @@
         </asp:SqlDataSource>
     </form>
 
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

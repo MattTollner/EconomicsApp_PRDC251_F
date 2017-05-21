@@ -18,7 +18,7 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
         }
     }
 
-    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    void DeleteUser()
     {
         // Get the currently selected row using the SelectedRow property.
         GridViewRow row = GridView1.SelectedRow;
@@ -26,9 +26,8 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
         // Display the first name from the selected row.
         // In this example, the third column (index 2) contains
         // the first name.        
-         
-        string studentID = row.Cells[1].Text;
 
+        string studentID = row.Cells[2].Text;
         using (SqlConnection con = new SqlConnection(CS))
         {
             string sqlIns = "DELETE FROM Class_List WHERE Student_ID = '" + Int32.Parse(studentID) + "'";
@@ -57,8 +56,17 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
 
 
         }
+    }
 
-
-        
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        // Get the currently selected row using the SelectedRow property.
+        GridViewRow row = GridView1.SelectedRow;
+        // Display the first name from the selected row.
+        // In this example, the third column (index 2) contains
+        // the first name.        
+        string studentID = row.Cells[2].Text;
+        Session["USERID"] = studentID;
+        Response.Redirect("~/Teacher/ViewStudentTests.aspx");
     }
 }

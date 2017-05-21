@@ -161,14 +161,14 @@ public partial class QuizResults : System.Web.UI.Page
                 {
                     for (int g = 0; g < ex.Errors.Count; i++)
                     {
-                        lblMsg.Text = "SQL Error : ensure connection to plymouth server";
-                        lblMsg.ForeColor = Color.Red;
+                        //lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                        //lblMsg.ForeColor = Color.Red;
                     }
                 }
                 catch (Exception ex)
                 {
-                    lblMsg.Text = "Error occured : " + ex.Message;
-                    lblMsg.ForeColor = Color.Red;
+                    //lblMsg.Text = "Error occured : " + ex.Message;
+                   // lblMsg.ForeColor = Color.Red;
                 }
 
                 if (dt.Rows.Count != 0)

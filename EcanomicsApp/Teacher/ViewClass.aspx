@@ -4,22 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+      <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Student_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="451px">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Student_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="451px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField SelectText="Remove" ShowSelectButton="True" />
+                <asp:CommandField SelectText="View" ShowSelectButton="True" />
                 <asp:BoundField DataField="Class_ID" HeaderText="Class_ID" SortExpression="Class_ID" Visible="False" />
                 <asp:BoundField DataField="Student_ID" HeaderText="Student ID" InsertVisible="False" ReadOnly="True" SortExpression="Student_ID" />
                 <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
                 <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
                 <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                <asp:CommandField DeleteText="Remove" ShowDeleteButton="True" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -40,5 +44,9 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </form>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

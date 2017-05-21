@@ -20,15 +20,26 @@ public partial class QuizResults : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        getQuestionIDs();
-        getRealAnswers();
-        getQuestions();
-        populateResults();       
+        if (Session["ATTEMPTID"] == null)
+        {
+            Response.Redirect("~/Student/QuizArchive.aspx");
+        }
+        else
+        {
+            getQuestionIDs();
+            getRealAnswers();
+            getQuestions();
+            getScore();
+            populateResults();
+        }
+              
 
     }
 
     void getQuestionIDs()
     {
+        
+
         using (SqlConnection con = new SqlConnection(CS))
         {
             DataTable dt = new DataTable();
@@ -41,10 +52,11 @@ public partial class QuizResults : System.Web.UI.Page
                 //SqlCommand cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
                 //cmd = new SqlCommand("select Questions.Question, Answers.Answer, Question_Attempt.Answer, Question_Attempt.Is_Correct from ((Question_Attempt INNER JOIN ON Question_Attempt.Question_ID = Questions.Question_ID) INNER JOIN Answers O Questions where Quiz_Attempt_ID='" + 103 + "'", con);
                 //cmd = new SqlCommand("select Question_Attempt.Answer, Answers.Answer FROM (Question_Attempt INNER JOIN ON Question_Attempt.Question_ID = Answers.Question_ID) Where Quiz_Attempt_ID ='" + 103 + "'", con);
-                cmd = new SqlCommand("select * FROM Question_Attempt Where Quiz_Attempt_ID ='" + 103 + "'", con);
+                cmd = new SqlCommand("select * FROM Question_Attempt Where Quiz_Attempt_ID ='" + Session["ATTEMPTID"].ToString() + "'", con);
                 con.Open();
                 sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+                string d = Session["ATTEMPTID"].ToString();
             }
             catch (SqlException ex)
             {
@@ -193,5 +205,53 @@ public partial class QuizResults : System.Web.UI.Page
 
          }
     }
+
+    void getScore()
+    {
+        using (SqlConnection con = new SqlConnection(CS))
+        {
+            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
+            SqlCommand cmd;
+            SqlDataAdapter sda;
+
+            try
+            {
+                //SqlCommand cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
+                //cmd = new SqlCommand("select Questions.Question, Answers.Answer, Question_Attempt.Answer, Question_Attempt.Is_Correct from ((Question_Attempt INNER JOIN ON Question_Attempt.Question_ID = Questions.Question_ID) INNER JOIN Answers O Questions where Quiz_Attempt_ID='" + 103 + "'", con);
+                //cmd = new SqlCommand("select Question_Attempt.Answer, Answers.Answer FROM (Question_Attempt INNER JOIN ON Question_Attempt.Question_ID = Answers.Question_ID) Where Quiz_Attempt_ID ='" + 103 + "'", con);
+                cmd = new SqlCommand("select Result FROM Quiz_Attempt Where Quiz_Attempt_ID ='" + Session["ATTEMPTID"].ToString() + "'", con);
+                con.Open();
+                sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+            }
+            catch (SqlException ex)
+            {
+                
+                    lblMsg.Text = ex.Message;
+                    lblMsg.ForeColor = Color.Red;
+                
+            }
+            catch (Exception ex)
+            {
+                lblMsg.Text = "Error occured : " + ex.Message;
+                lblMsg.ForeColor = Color.Red;
+            }
+
+            if (dt.Rows.Count != 0)
+            {
+               
+                Label curLbl = Page.FindControl("ScoreID") as Label;
+                curLbl.Text = "<b> Score : </b>" + dt.Rows[0][0] + "/10";
+
+
+
+
+            }
+
+        }
+    }
+
+    
 
 }

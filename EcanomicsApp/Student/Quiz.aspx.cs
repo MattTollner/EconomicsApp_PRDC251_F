@@ -22,6 +22,7 @@ public partial class Quiz : System.Web.UI.Page
     private string[] answerArray;
     static Random _random = new Random();
     int attemptID;
+    int correctAnswers = 0;
 
     DataTable dt1 = new DataTable();
     DataTable dt2 = new DataTable();
@@ -32,7 +33,7 @@ public partial class Quiz : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        dateTaken = DateTime.Today.Date;
+        dateTaken = DateTime.Today;
       //  string id = Session["USERID"].ToString();
         if (Session["USERID"] == null)
         {
@@ -47,7 +48,8 @@ public partial class Quiz : System.Web.UI.Page
         {
             getRandomQuestions();
             populateQuestions();
-            SubmitQuiz(20);
+            SubmitQuiz( Int32.Parse( Session["USERID"].ToString()));
+            UpdateQuizAttempt();
             //SubmitQuiz(Int32.Parse(Session["USERID"].ToString()));
         }
     }
@@ -168,8 +170,7 @@ public partial class Quiz : System.Web.UI.Page
 
     private void SubmitQuiz(int theID)
     {
-        String CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
-
+       
         using (SqlConnection con = new SqlConnection(CS))
         {
             string sqlIns = "INSERT INTO Quiz_Attempt (Quiz_ID, Student_ID, Result,Date) VALUES (@qID, @sID, @rslt, @date) SELECT SCOPE_IDENTITY()";
@@ -260,7 +261,8 @@ public partial class Quiz : System.Web.UI.Page
                                 cmd.Parameters.AddWithValue("@qID", questionIdArray[g - 1]);
                                 cmd.Parameters.AddWithValue("@ans", uAnser);
                                 cmd.Parameters.AddWithValue("@correct", 1);
-                                cmd.ExecuteNonQuery();                            
+                                cmd.ExecuteNonQuery();
+                                correctAnswers++;
 
                             }
                             catch (SqlException ex)
@@ -313,13 +315,48 @@ public partial class Quiz : System.Web.UI.Page
 
                 }
 
-            }       
+            }
+        UpdateQuizAttempt();
 
+    }
+
+    void UpdateQuizAttempt()
+    {
+        using (SqlConnection con = new SqlConnection(CS))
+        {
+            string sqlIns = "UPDATE Quiz_Attempt SET Result = '" + correctAnswers + "' WHERE Quiz_Attempt_ID = '" + Int32.Parse(Session["ATTEMPTID"].ToString()) + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlIns, con);
+
+            try
+            {
+                con.Open();            
+                
+                cmd.ExecuteNonQuery();
+               
+
+            }
+            catch (SqlException ex)
+            {
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    string error = ex.Errors[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
     }
 
     protected void Button1_Click(object sender, EventArgs e)
     {        
         CalculateScore();
+        Response.Redirect("~/Student/QuizResults.aspx");
     }
 
     

@@ -7,12 +7,3 @@ C:\Users\Matt\Desktop\Ec Folder\EconomicsWebApplication\EconomicsWebApplication\
 C:\Users\Matt\Desktop\Ec Folder\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.AssemblyInfo.cs
 C:\Users\Matt\Desktop\Ec Folder\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.dll
 C:\Users\Matt\Desktop\Ec Folder\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.pdb
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\bin\Debug\netcoreapp1.1\EconomicsWebApplication.deps.json
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\bin\Debug\netcoreapp1.1\EconomicsWebApplication.runtimeconfig.json
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\bin\Debug\netcoreapp1.1\EconomicsWebApplication.runtimeconfig.dev.json
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\bin\Debug\netcoreapp1.1\EconomicsWebApplication.dll
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\bin\Debug\netcoreapp1.1\EconomicsWebApplication.pdb
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.csprojResolveAssemblyReference.cache
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.AssemblyInfo.cs
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.dll
-C:\Users\Matt\Source\Repos\EconomicsApp_PRDC251_F3\EconomicsWebApplication\EconomicsWebApplication\obj\Debug\netcoreapp1.1\EconomicsWebApplication.pdb

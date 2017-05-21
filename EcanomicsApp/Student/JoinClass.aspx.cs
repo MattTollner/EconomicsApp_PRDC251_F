@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -57,9 +58,17 @@ public partial class Student_JoinClass : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-
+                lblError.Text = "Error occured" + ex.Message;
+                lblError.ForeColor = Color.Red;
             }
 
         }
+    }
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
     }
 }

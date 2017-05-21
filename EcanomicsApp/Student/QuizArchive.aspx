@@ -48,6 +48,7 @@
                         <li><a href="RevisionMaterial.aspx">Revision Material <span class="sr-only">(current)</span></a></li>
                         <li><a href="SelectQuiz.aspx">Quiz</a></li>
                         <li><a href="SelectQuizArchive.aspx">Quiz Archive</a></li>
+                        <li><a href="JoinClass.aspx">Join Class</a></li>
                         <li><a href="Glossary.aspx">Glossary</a></li>
                         <li><a href="NewsOutlet.aspx">News Outlets</a></li>
                     </ul>

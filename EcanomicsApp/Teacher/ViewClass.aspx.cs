@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -51,7 +52,8 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-
+                lblError.Text = "Error occured : " + ex.Message;
+                lblError.ForeColor = Color.Red;
             }
 
 

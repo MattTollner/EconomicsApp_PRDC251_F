@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -200,7 +201,8 @@ public partial class Quiz : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-
+                lblError.Text = "Error occured : " + ex.Message;
+                lblError.ForeColor = Color.Red;
             }
 
 
@@ -274,8 +276,9 @@ public partial class Quiz : System.Web.UI.Page
                             }
                             catch (Exception ex)
                             {
-
-                            }
+                            lblError.Text = "Error occured : " + ex.Message;
+                            lblError.ForeColor = Color.Red;
+                        }
 
                         }
                         else
@@ -310,8 +313,10 @@ public partial class Quiz : System.Web.UI.Page
                     }
                     else
                     {
-                        Console.WriteLine("Shit mate");
-                    }
+                        
+                    lblError.Text = "Error occured";
+                    lblError.ForeColor = Color.Red;
+                }
 
                 }
 
@@ -346,7 +351,8 @@ public partial class Quiz : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-
+                lblError.Text = "Error occured : " + ex.Message;
+                lblError.ForeColor = Color.Red;
             }
 
 

@@ -359,7 +359,13 @@ public partial class Quiz : System.Web.UI.Page
         Response.Redirect("~/Student/QuizResults.aspx");
     }
 
-    
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Clicked");
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
+
 }
 
 

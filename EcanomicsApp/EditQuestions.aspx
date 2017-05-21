@@ -20,7 +20,7 @@
 
             <label class="col-xs-11"><h5 style="color:#ACCFCC;">Question</h5></label>
             <div class="col-xs-11">
-                <asp:TextBox ID="tbQuestion" runat="server" Class ="form-control" placeholder="Question" TextMode="Email"></asp:TextBox>          
+                <asp:TextBox ID="tbQuestion" runat="server" Class ="form-control" placeholder="Question"></asp:TextBox>          
             </div>
 
             <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Answer </h5></label>
@@ -36,12 +36,24 @@
             <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Dummy Answer 2 </h5></label>
             <div class="col-xs-11">
                 <asp:TextBox ID="tbDummy2" runat="server" Class ="form-control" placeholder="Dummy Answer"></asp:TextBox>
-            </div>
+            </div> 
 
             <label class="col-xs-11"><h5 style="color:#ACCFCC;"> Dummy Answer 3 </h5></label>
             <div class="col-xs-11">
-                <asp:TextBox ID="tbDummy3" runat="server" Class ="form-control" placeholder="Dummy Answer"></asp:TextBox>
-            </div>            
+                <asp:TextBox ID="tbDummy3" runat="server" Class ="form-control" placeholder="Dummy Answer"></asp:TextBox> <br /> 
+            </div>  
+        
+        <div class="col-xs-11">           
+              <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label><br /><br />
+            </div> 
+        
+        <div class="col-xs-11">
+            <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click"/>
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click"/>
+         
+            </div>  
+
+         
              
     </form>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

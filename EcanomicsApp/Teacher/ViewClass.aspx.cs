@@ -44,10 +44,9 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
             }
             catch (SqlException ex)
             {
-                for (int i = 0; i < ex.Errors.Count; i++)
-                {
+                
                     string error = ex.Errors[0].ToString();
-                }
+                
             }
             catch (Exception ex)
             {

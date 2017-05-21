@@ -13,13 +13,14 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CssClass="table table-striped table-bordered table-hover" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Question_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CssClass="table table-striped table-bordered table-hover" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Question_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleted="GridView1_RowDeleted">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="Question_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Question_ID" />
                 <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
                 <asp:BoundField DataField="Answer" HeaderText="Answer" SortExpression="Answer" />
+                <asp:CommandField SelectText="Delete" ShowSelectButton="True" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -32,6 +33,10 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
+
+        <div>
+            <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+        </div>
     
     </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuizAttemptConnectionString %>" SelectCommand="SELECT Questions.Question, Answers.Answer, Questions.Question_ID FROM Questions INNER JOIN Answers ON Questions.Question_ID = Answers.Question_ID"></asp:SqlDataSource>

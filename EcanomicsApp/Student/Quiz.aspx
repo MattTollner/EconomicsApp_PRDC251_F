@@ -13,7 +13,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Custom-Cs.css" rel="stylesheet" />
-    <link href="css/bootstrap.csss" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
 
   
 </head>
@@ -127,7 +127,7 @@
 
             <br />
             <br />
-
+            
 
             <asp:Label ID="question7" runat="server" Text="Label"></asp:Label>
             <br />

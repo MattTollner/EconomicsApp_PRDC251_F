@@ -13,14 +13,14 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CssClass="table table-striped table-bordered table-hover" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Question_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleted="GridView1_RowDeleted">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CssClass="table table-striped table-bordered table-hover" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Question_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="Question_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Question_ID" />
+                <asp:CommandField SelectText="View" ShowSelectButton="True" />
                 <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
                 <asp:BoundField DataField="Answer" HeaderText="Answer" SortExpression="Answer" />
-                <asp:CommandField SelectText="Delete" ShowSelectButton="True" />
+                <asp:BoundField DataField="Question_ID" HeaderText="Question_ID" SortExpression="Question_ID" InsertVisible="False" ReadOnly="True" />
+                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -39,7 +39,11 @@
         </div>
     
     </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuizAttemptConnectionString %>" SelectCommand="SELECT Questions.Question, Answers.Answer, Questions.Question_ID FROM Questions INNER JOIN Answers ON Questions.Question_ID = Answers.Question_ID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuizAttemptConnectionString %>" SelectCommand="SELECT Questions.Question, Answers.Answer, Questions.Question_ID FROM Questions INNER JOIN Answers ON Questions.Question_ID = Answers.Question_ID" DeleteCommand="DELETE FROM Questions FROM Questions INNER JOIN [Dummy] ON Questions.Question_ID = [Dummy].Question_ID INNER JOIN Answers ON Questions.Question_ID = Answers.Question_ID WHERE (Questions.Question_ID = @Question_ID)">
+            <DeleteParameters>
+                <asp:Parameter Name="Question_ID" />
+            </DeleteParameters>
+        </asp:SqlDataSource>
     </form>
 
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -97,9 +97,6 @@ public partial class AddQuestion : System.Web.UI.Page
 
             }
 
-
-
-
             else
             {
                 lblMsg.ForeColor = Color.Red;
@@ -185,17 +182,13 @@ public partial class AddQuestion : System.Web.UI.Page
 
     protected void btnAdd_Click1(object sender, EventArgs e)
     {
-        try
-        {
+       
             addQuestion();
             addAnswer();
             addDummy();
-        }
-        catch (Exception ex)
-        {
-            lblMsg.Text = "Error occured : " + ex.Message;
-            lblMsg.ForeColor = Color.Red;
-        }
+        
+        
+        
         
     }
 }

@@ -19,7 +19,7 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
         }
     }
 
-    void DeleteUser()
+    void DeleteUser(string rowDel)
     {
         // Get the currently selected row using the SelectedRow property.
         GridViewRow row = GridView1.SelectedRow;
@@ -28,10 +28,10 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
         // In this example, the third column (index 2) contains
         // the first name.        
 
-        string studentID = row.Cells[2].Text;
+        
         using (SqlConnection con = new SqlConnection(CS))
         {
-            string sqlIns = "DELETE FROM Class_List WHERE Student_ID = '" + Int32.Parse(studentID) + "'";
+            string sqlIns = "DELETE FROM Class_List WHERE Student_ID = '" + Int32.Parse(rowDel) + "'";
 
 
             SqlCommand cmd = new SqlCommand(sqlIns, con);
@@ -77,4 +77,11 @@ public partial class Teacher_ViewClass : System.Web.UI.Page
         Session["USERNAME"] = null;
         Response.Redirect("~/Default.aspx");
     }
+
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        string username = GridView1.DataKeys[e.RowIndex].Value.ToString();
+        DeleteUser(username);
+    }
+
 }

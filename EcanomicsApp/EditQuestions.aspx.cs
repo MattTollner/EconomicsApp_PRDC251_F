@@ -17,7 +17,7 @@ public partial class EditQuestions : System.Web.UI.Page
     DataTable dt1 = new DataTable();
     DataTable dt2 = new DataTable();
     DataTable dt3 = new DataTable();
-    private int[] dummyIDs;
+    static int[] dummyIDs;
     String CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
     
     protected void Page_Load(object sender, EventArgs e)
@@ -154,7 +154,7 @@ public partial class EditQuestions : System.Web.UI.Page
 
     void UpdateDummy()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 1; i < 3; i++)
         {
             
             using (SqlConnection con = new SqlConnection(CS))
@@ -163,9 +163,10 @@ public partial class EditQuestions : System.Web.UI.Page
                 try
                 {
                     TextBox qLbl = Page.FindControl("tbDummy" + i) as TextBox;
+                    string hello = qLbl.Text;
                     //Dummy Answers
                     con.Open();
-                    cmd = new SqlCommand("UPDATE Dummy_Answer SET Dummy = '" + qLbl.Text + "' WHERE Dummy_ID = '" + dummyIDs[i] + "'", con);
+                    cmd = new SqlCommand("UPDATE Dummy SET Dummy_Answer = '" + qLbl.Text + "' WHERE Dummy_ID = '" + dummyIDs[i-1] + "'", con);
                     cmd.ExecuteNonQuery();
 
                 }

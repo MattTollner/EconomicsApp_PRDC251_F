@@ -26,30 +26,20 @@ public partial class ViewQuestions : System.Web.UI.Page
         // Display the first name from the selected row.
         // In this example, the third column (index 2) contains
         // the first name.        
-        Session["QUESTIONID"] = row.Cells[1].Text;
+        Session["QUESTIONID"] = row.Cells[3].Text;
         string d = Session["QUESTIONID"].ToString();
         Response.Redirect("~/EditQuestions.aspx");
     }
 
-    protected void GridView1_RowDeleted(object sender, GridViewDeletedEventArgs e)
-    {
-      
-        TableCell cell = GridView1.Rows[e.AffectedRows].Cells[1];
-        TableCell cell2 = GridView1.Rows[e.AffectedRows].Cells[2];
-        TableCell cell3 = GridView1.Rows[e.AffectedRows].Cells[3];
-
-        // Display the first name from the selected row.
-        // In this example, the third column (index 2) contains
-        // the first name.        
-
-        int questionID = Int32.Parse(cell.Text);
-        string questionID2 = cell2.Text;
-        string questionID3 = (cell3.Text);
-
-        DeleteDummy(questionID);
-        DeleteAnswer(questionID);
-        DeleteQuestion(questionID);
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {       
+        string id = GridView1.DataKeys[e.RowIndex].Value.ToString();
+        DeleteDummy(Int32.Parse(id));
+        DeleteAnswer(Int32.Parse(id));
+        DeleteQuestion(Int32.Parse(id));
     }
+
+
 
     private void DeleteDummy(int questionId)
     {
@@ -61,7 +51,7 @@ public partial class ViewQuestions : System.Web.UI.Page
                 
                 //Dummy Answers
                 con.Open();
-                cmd = new SqlCommand("Delete From Dummy_Answer WHERE Question_ID = '" + questionId + "'", con);
+                cmd = new SqlCommand("Delete From Dummy WHERE Question_ID = '" + questionId + "'", con);
                 cmd.ExecuteNonQuery();
 
             }
@@ -137,4 +127,8 @@ public partial class ViewQuestions : System.Web.UI.Page
             }
         }
     }
+
+    
+
+    
 }

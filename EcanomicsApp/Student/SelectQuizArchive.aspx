@@ -63,13 +63,14 @@
 
                 <div class="jumbotron">
                     <div class="row">                       
-
+                        <center>
 	                    <div class="btn-group-vertical">	                        
-                            <asp:Button ID="asLevelQuiz" class="btn btn-default btn-lg" runat="server" Text="AS-Level Archive" OnClick="asLevelQuiz_Click" />
+                           <asp:Button ID="asLevelQuiz" class="btn btn-default btn-lg" runat="server" Text="AS-Level Archive" OnClick="asLevelQuiz_Click" />
                             <asp:Button ID="aLevelQuiz" class="btn btn-default btn-lg" runat="server" Text="A-Level Archive" OnClick="aLevelQuiz_Click" />
-	                    </div>                        
+                        </center>    
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

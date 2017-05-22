@@ -79,13 +79,13 @@
                 <br />
 
                 <div class="col-xs-11">
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover" CellPadding="4" DataKeyNames="Quiz_Attempt_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="No Records Found..." AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover" CellPadding="4" DataKeyNames="Quiz_Attempt_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowSorting="True">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="Quiz_Attempt_ID" HeaderText="Quiz_Attempt_ID" InsertVisible="False" ReadOnly="True" SortExpression="Quiz_Attempt_ID" />
-                            <asp:BoundField DataField="Quiz_ID" HeaderText="Quiz_ID" SortExpression="Quiz_ID" />
-                            <asp:BoundField DataField="Student_ID" HeaderText="Student_ID" SortExpression="Student_ID" />
+                            <asp:BoundField DataField="Quiz_Attempt_ID" HeaderText="AttemptID" InsertVisible="False" ReadOnly="True" SortExpression="Quiz_Attempt_ID" />
+                            <asp:BoundField DataField="Quiz_ID" HeaderText="Quiz Year" SortExpression="Quiz_ID" />
+                            <asp:BoundField DataField="Student_ID" HeaderText="Student ID" SortExpression="Student_ID" />
                             <asp:BoundField DataField="Result" HeaderText="Result" SortExpression="Result" />
                             <asp:BoundField DataField="Date" DataFormatString="{0:d}" HeaderText="Date" SortExpression="Date" />
                         </Columns>

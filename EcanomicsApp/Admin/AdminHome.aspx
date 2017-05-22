@@ -75,6 +75,7 @@
 	<div class="btn-group-vertical">
 	
 	<a href="ViewQuestions.aspx" class="btn btn-default btn-lg">View Questions<span class="glyphicon glyphicon-book"></span></a><br />
+        <a href="AddQuestion.aspx" class="btn btn-default btn-lg">Add Question<span class="glyphicon glyphicon-book"></span></a><br />
         <a href="AdminCreateAccount.aspx" class="btn btn-default btn-lg">Create Admin Account<span class="glyphicon glyphicon-book"></span></a><br />
 	
 	

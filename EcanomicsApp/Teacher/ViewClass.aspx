@@ -55,7 +55,7 @@
 
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Student_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="451px" OnRowDeleting="GridView1_RowDeleting">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="True" EmptyDataText="No Records Found..." CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Student_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="451px" OnRowDeleting="GridView1_RowDeleting">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField SelectText="View" ShowSelectButton="True" />

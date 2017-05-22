@@ -49,16 +49,17 @@ public partial class Student_JoinClass : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@sID", Int32.Parse(Session["USERID"].ToString()));
                 //cmd.Parameters.AddWithValue("@sID", Int32.Parse(Session["USERID"].ToString()));
                 SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();                
+                reader.Read();
+                Response.Redirect("~/Student/Home.aspx");
               
 
             }
             catch (SqlException ex)
             {
-                for (int i = 0; i < ex.Errors.Count; i++)
-                {
-                    string error = ex.Errors[0].ToString();
-                }
+                
+                    lblError.Text = ex.Message;
+                lblError.ForeColor = Color.Red;
+
             }
             catch (Exception ex)
             {

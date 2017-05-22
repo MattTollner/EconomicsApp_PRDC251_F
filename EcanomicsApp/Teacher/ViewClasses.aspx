@@ -60,7 +60,7 @@
     <div class="jumbotron">
 	    <center>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" CssClass="table table-striped table-bordered table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="True" EmptyDataText="No records Found" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" CssClass="table table-striped table-bordered table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />

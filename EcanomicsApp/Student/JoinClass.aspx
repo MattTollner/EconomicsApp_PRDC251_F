@@ -67,12 +67,12 @@
 
     <center>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" CssClass="table table-striped table-bordered table-hover" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" EmptyDataText="No Records Found..." CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" CssClass="table table-striped table-bordered table-hover" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField SelectText="Join" ShowSelectButton="True" />
-                <asp:BoundField DataField="Class_ID" HeaderText="Class_ID" InsertVisible="False" ReadOnly="True" SortExpression="Class_ID" />
-                <asp:BoundField DataField="Class_Name" HeaderText="Class_Name" SortExpression="Class_Name" />
+                <asp:BoundField DataField="Class_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Class_ID" />
+                <asp:BoundField DataField="Class_Name" HeaderText="Name" SortExpression="Class_Name" />
                 <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
                 <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
             </Columns>

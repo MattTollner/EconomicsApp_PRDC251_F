@@ -26,7 +26,7 @@ public partial class ViewQuestions : System.Web.UI.Page
         // Display the first name from the selected row.
         // In this example, the third column (index 2) contains
         // the first name.        
-        Session["QUESTIONID"] = row.Cells[3].Text;
+        Session["QUESTIONID"] = row.Cells[4].Text;
         string d = Session["QUESTIONID"].ToString();
         Response.Redirect("~/Admin/EditQuestions.aspx");
     }

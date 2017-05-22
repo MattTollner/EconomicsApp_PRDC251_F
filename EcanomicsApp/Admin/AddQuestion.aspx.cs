@@ -155,6 +155,10 @@ public partial class AddQuestion : System.Web.UI.Page
                 {
                     con.Open();
                     cmd.ExecuteNonQuery();
+                    lblMsg.Text = "Question Added";
+                    
+
+
 
                 }
                 catch (SqlException ex)
@@ -177,7 +181,7 @@ public partial class AddQuestion : System.Web.UI.Page
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/SignIn.aspx");
+        Response.Redirect("~/Admin/AdminHome.aspx");
     }
 
     protected void btnAdd_Click1(object sender, EventArgs e)
@@ -186,9 +190,5 @@ public partial class AddQuestion : System.Web.UI.Page
             addQuestion();
             addAnswer();
             addDummy();
-        
-        
-        
-        
     }
 }

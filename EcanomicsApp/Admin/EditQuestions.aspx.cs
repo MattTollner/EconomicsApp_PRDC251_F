@@ -100,8 +100,9 @@ public partial class EditQuestions : System.Web.UI.Page
                 //Question
                 con.Open();
                 string s = Session["QUESTIONID"].ToString();
-                cmd = new SqlCommand("UPDATE Questions SET Question = @qu Where Question_ID ='" + s + "'", con);
+                cmd = new SqlCommand("UPDATE Questions SET (Question = @qu Where Question_ID ='" + s + "'", con);
                 cmd.Parameters.AddWithValue("@qu", tbQuestion.Text);
+              
                 cmd.ExecuteNonQuery();                
 
                 
@@ -213,6 +214,6 @@ public partial class EditQuestions : System.Web.UI.Page
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/ViewQuestions.aspx");
+        Response.Redirect("~/Admin/ViewQuestions.aspx");
     }
 }

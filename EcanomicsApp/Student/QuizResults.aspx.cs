@@ -192,11 +192,11 @@ public partial class QuizResults : System.Web.UI.Page
         {
             temp = "quesiton" + i;
             Label curLbl = Page.FindControl(temp) as Label;
-            curLbl.Text = "<b> Question " + i + "</b> : <br />" + questionArray[i - 1];
+            curLbl.Text =  questionArray[i - 1];
 
             temp = "uAnswer" + i;
             curLbl = Page.FindControl(temp) as Label;
-            curLbl.Text = "Your Answer : " + uAnswerArray[i - 1];
+            curLbl.Text =  "Your Answer : " + uAnswerArray[i - 1];
 
             temp = "answer" + i;
             curLbl = Page.FindControl(temp) as Label;
@@ -259,4 +259,17 @@ public partial class QuizResults : System.Web.UI.Page
         Response.Redirect("~/Default.aspx");
     }
 
+
+    protected void goHome_Click(object sender, EventArgs e)
+    {
+        if(Session["USERTYPE"].ToString() == "Teacher")
+        {
+            Response.Redirect("~/Teacher/TeacherHome.aspx");
+        } else
+        {
+            Response.Redirect("~/Student/Home.aspx");
+        }
+
+      
+    }
 }

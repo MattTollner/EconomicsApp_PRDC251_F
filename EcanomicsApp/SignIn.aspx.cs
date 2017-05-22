@@ -128,7 +128,7 @@ public partial class SignIn : System.Web.UI.Page
               
 
             }
-            else
+            else if (SelectType.Value == "Teacher")
             {
                 //TEACHER SIGN IN
                 try
@@ -198,6 +198,80 @@ public partial class SignIn : System.Web.UI.Page
                     dt.Clear();
                 }
             }
+            else if (SelectType.Value == "Admin")
+            {
+                //Admin SIGN IN
+                try
+                {
+                    //SqlCommand cmd = new SqlCommand("select * from Student where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
+                    cmd = new SqlCommand("select Admin_ID, Username, PasswordHash from Admin where Username='" + UserName.Text + "'", con);
+                    con.Open();
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                }
+                catch (SqlException ex)
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                        lblMsg.ForeColor = Color.Red;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblMsg.Text = "Error occured : " + ex.Message;
+                    lblMsg.ForeColor = Color.Red;
+                }
+                string abc;
+                string abcd = "";
+
+                if (dt.Rows.Count != 0)
+                {
+                    abc = dt.Rows[0]["Username"].ToString();
+                    abcd = dt.Rows[0]["PasswordHash"].ToString();
+                }
+                else
+                {
+                    lblMsg.Text = "Wrong username";
+                }
+
+
+                Boolean isCorrect = HashingPassword.VerifyHash(Password.Text, abcd);
+
+                if (isCorrect == true)
+                {
+                    try
+                    {
+                        con.Close();
+                        cmd = new SqlCommand("select * from Admin where Username='" + UserName.Text + "'", con);
+                        con.Open();
+                        sda = new SqlDataAdapter(cmd);
+                        sda.Fill(dt);
+                    }
+                    catch (SqlException ex)
+                    {
+                        for (int i = 0; i < ex.Errors.Count; i++)
+                        {
+                            lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                            lblMsg.ForeColor = Color.Red;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMsg.Text = "Error occured : " + ex.Message;
+                        lblMsg.ForeColor = Color.Red;
+                    }
+
+                }
+                else
+                {
+                    dt.Clear();
+                }
+            }
+            else
+            {
+                lblMsg.Text = "Please select login user type";
+            }
 
 
             if (dt.Rows.Count != 0)
@@ -230,15 +304,23 @@ public partial class SignIn : System.Web.UI.Page
                     Session["USERTYPE"] = "STUDENT";
                     Session["USERID"] = dt.Rows[0]["Student_ID"].ToString();
                     Response.Redirect("~/Student/home.aspx");
-                } else
+                } else if(SelectType.Value == "Teacher")
                 {
                     //go to teacehr page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "TEACHER";
                     Session["USERID"] = dt.Rows[0]["Teacher_ID"].ToString();
                     Response.Redirect("~/Teacher/TeacherHome.aspx");
-                }         
-                
+                }
+                else if (SelectType.Value == "Admin")
+                {
+                    //go to teacehr page
+                    Session["USERNAME"] = UserName.Text;
+                    Session["USERTYPE"] = "Admin";
+                    Session["USERID"] = dt.Rows[0]["Admin_ID"].ToString();
+                    Response.Redirect("~/Admin/AdminHome.aspx");
+                }
+
 
             }
             else

@@ -43,6 +43,7 @@
                         <select id="SelectType" runat="server">
                             <option>Student</option>
                             <option>Teacher</option>
+                            <option>Admin</option>
                         </select>                        
                     </div>
                 </div>

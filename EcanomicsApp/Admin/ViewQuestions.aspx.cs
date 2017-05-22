@@ -28,7 +28,7 @@ public partial class ViewQuestions : System.Web.UI.Page
         // the first name.        
         Session["QUESTIONID"] = row.Cells[3].Text;
         string d = Session["QUESTIONID"].ToString();
-        Response.Redirect("~/EditQuestions.aspx");
+        Response.Redirect("~/Admin/EditQuestions.aspx");
     }
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

@@ -18,4 +18,4 @@ function myFunction() {
     }
 }
 </script>
-Try it Yourself »
+

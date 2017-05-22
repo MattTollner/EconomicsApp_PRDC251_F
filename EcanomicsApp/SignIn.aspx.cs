@@ -141,11 +141,10 @@ public partial class SignIn : System.Web.UI.Page
                 }
                 catch (SqlException ex)
                 {
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        lblMsg.Text = "SQL Error : ensure connection to plymouth server";
+                   
+                        lblMsg.Text = ex.Message;
                         lblMsg.ForeColor = Color.Red;
-                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -310,6 +309,7 @@ public partial class SignIn : System.Web.UI.Page
                     Session["USERNAME"] = UserName.Text;
                     Session["USERTYPE"] = "TEACHER";
                     Session["USERID"] = dt.Rows[0]["Teacher_ID"].ToString();
+                    string h = Session["USERID"].ToString();
                     Response.Redirect("~/Teacher/TeacherHome.aspx");
                 }
                 else if (SelectType.Value == "Admin")

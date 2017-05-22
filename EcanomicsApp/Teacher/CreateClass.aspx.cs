@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,9 +14,9 @@ public partial class Teacher_CreateClass : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Session["Teacher_ID"] == null)
+        if(Session["USERID"] == null)
         {
-            //
+            Response.Redirect("~/SignIn.aspx");
         }
     }
 
@@ -38,23 +39,29 @@ public partial class Teacher_CreateClass : System.Web.UI.Page
             {
                 string cName = tbClassName.Text;
                 con.Open();
-                cmd.Parameters.AddWithValue("@tID", 13);
+                cmd.Parameters.AddWithValue("@tID", Int32.Parse(Session["USERID"].ToString()));
                 cmd.Parameters.AddWithValue("@cNme", cName);                
                 SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();               
+                reader.Read();
+                tbClassName.Text = "";                
+                lblMsg.Text = "Class Created";
+                lblMsg.ForeColor = Color.Green;
+                
+
                 
 
             }
             catch (SqlException ex)
             {
-                for (int i = 0; i < ex.Errors.Count; i++)
-                {
-                    string error = ex.Errors[0].ToString();
-                }
+                
+                lblMsg.Text = ex.Message;
+                lblMsg.ForeColor = Color.Red; 
+                
             }
             catch (Exception ex)
             {
-
+                lblMsg.Text = ex.Message;
+                lblMsg.ForeColor = Color.Red;
             }
 
 
@@ -63,8 +70,9 @@ public partial class Teacher_CreateClass : System.Web.UI.Page
 
     protected void btnLogOut_Click(object sender, EventArgs e)
     {
-        Console.WriteLine("Clicked");
+       
         Session["USERNAME"] = null;
-        Response.Redirect("~/Default.aspx");
+        Session["USERID"] = null;
+        Response.Redirect("~/SignIn.aspx");
     }
 }

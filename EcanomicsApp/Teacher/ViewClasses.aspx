@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title></title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/teacherBootstrap.css" rel="stylesheet" />
+        <link href="~/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Admin/css/teacherBootstrap.css" rel="stylesheet" />
 </head>
 <body style="background-color:#413D49">
     <form id="form1" runat="server">
@@ -60,12 +60,12 @@
     <div class="jumbotron">
 	    <center>
     
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Class_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" CssClass="table table-striped table-bordered table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField SelectText="View Class" ShowSelectButton="True" />
-                <asp:BoundField DataField="Class_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Class_ID" />
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="Class_Name" HeaderText="Class Name" SortExpression="Class_Name" />
+                <asp:BoundField DataField="Class_ID" HeaderText="ID" SortExpression="Class_ID" InsertVisible="False" ReadOnly="True" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -84,14 +84,14 @@
     </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XserveConnectionString %>" SelectCommand="SELECT [Class_Name], [Class_ID] FROM [Class] WHERE ([Teacher_ID] = @Teacher_ID)">
             <SelectParameters>
-                <asp:SessionParameter DefaultValue="13" Name="Teacher_ID" SessionField="TEACHERID" Type="Int32" />
+                <asp:SessionParameter DefaultValue="17" Name="Teacher_ID" SessionField="USERID" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="~/Admin/js/bootstrap.min.js"></script>
     </form>
 </body>
 </html>

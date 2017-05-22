@@ -72,8 +72,9 @@
 	<a href="ViewClasses.aspx" class="btn btn-default btn-lg">Student Quiz Archive <span class="glyphicon glyphicon-inbox"></span></a><br />
 	
 	<a href="Glossary.aspx" class="btn btn-default btn-lg">Glossary <span class="glyphicon glyphicon-th-list"></span></a><br />
+	<a href="ViewClasses.aspx" class="btn btn-default btn-lg">View Classes <span class="glyphicon glyphicon-text-background"></span></a><br />
 	
-	<a href="NewsOutlet.aspx" class="btn btn-default btn-lg">News Outlets <span class="glyphicon glyphicon-text-background"></span></a><br />
+        <a href="CreateClass.aspx" class="btn btn-default btn-lg">Create Class <span class="glyphicon glyphicon-text-background"></span></a><br />
     
     <h5><asp:Label ID="successLbl" runat="server"  CssClass="btn bnt-default navbar-btn" Text="Log Out"></asp:Label></h5>    
     </div>

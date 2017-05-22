@@ -14,7 +14,11 @@ public partial class Student_JoinClass : System.Web.UI.Page
     string CS = ConfigurationManager.ConnectionStrings["XserveConnectionString"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(Session["USERID"]== null)
+        {
+            Response.Redirect("~/SignIn.aspx");
+        }
+        
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,7 +46,7 @@ public partial class Student_JoinClass : System.Web.UI.Page
             {
                 con.Open();
                 cmd.Parameters.AddWithValue("@cID", Int32.Parse( classID));
-                cmd.Parameters.AddWithValue("@sID", 21);
+                cmd.Parameters.AddWithValue("@sID", Int32.Parse(Session["USERID"].ToString()));
                 //cmd.Parameters.AddWithValue("@sID", Int32.Parse(Session["USERID"].ToString()));
                 SqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();                

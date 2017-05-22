@@ -65,11 +65,15 @@
             <center>
                 <label class="col-xs-11">Class Name</label>
                 <div class="col-xs-11">
-                    <asp:TextBox ID="tbClassName" runat="server" Class="form-control" placeholder="Class Name"></asp:TextBox>
+                    <asp:TextBox ID="tbClassName" runat="server" Class="form-control" placeholder="Class Name"></asp:TextBox> <br />
                 </div>
 
                 <div class="col-xs-11">                   
                     <asp:Button ID="updateInformation" runat="server" Text="Update" OnClick="updateInformation_Click" />
+                </div>
+
+                <div class="col-xs-11">                   
+                    <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
                 </div>
                 </center> 
                </div></div></div>

@@ -20,7 +20,7 @@ public partial class Teacher_ViewClasses : System.Web.UI.Page
         // Display the first name from the selected row.
         // In this example, the third column (index 2) contains
         // the first name.        
-        Session["CLASSID"] = row.Cells[1].Text;
+        Session["CLASSID"] = row.Cells[2].Text;
         string d = Session["CLASSID"].ToString();
         Response.Redirect("~/Teacher/ViewClass.aspx");
     }

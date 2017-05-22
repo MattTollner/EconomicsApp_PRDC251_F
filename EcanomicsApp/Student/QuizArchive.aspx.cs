@@ -12,7 +12,10 @@ public partial class Student_QuizArchive : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string j = Session["USERID"].ToString();
+        if(Session["USERID"] == null)
+        {
+            Response.Redirect("~/SignIn.aspx");
+        }
        
     }
 
